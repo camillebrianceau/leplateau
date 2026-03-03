@@ -42,7 +42,32 @@
 <div class="site-container">
 <header>
 <header>
-    <?php include 'components/navbar.html'; ?>
+
+
+
+
+<nav class="navbar">
+
+    <!-- Liens gauche -->
+    <div class="nav-left">
+        <a href="../lieu.html">Le lieu</a>
+        <a href="../event.html">Les événements</a>
+    </div>
+
+    <!-- Logo centré -->
+    <div class="nav-center">
+        <a href="index.html">
+            <img src="./assets/images/logo.png" alt="Logo Le Plateau" height="70">
+        </a>
+    </div>
+
+    <!-- Liens droite -->
+    <div class="nav-right">
+        <a href="../association.html">L'association</a>
+        <a href="../contact.html">Nous contacter</a>
+    </div>
+
+</nav>
     
 </header>
 
@@ -196,7 +221,52 @@
 <div class="elfsight-app-523775c9-027d-487d-850c-03de0a50f5b7" data-elfsight-app-lazy></div>
 
 
-<?php include 'components/footer.html'; ?>
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Colonne 1 : Contact -->
+        <div class="footer-col center">
+            <!-- <h3>Contact</h3> -->
+            <p>
+                <br>
+                5 Place du 14 Juillet<br>
+                33130 Bègles<br><br>
+                05 00 00 00 00<br>
+                contact@leplateau.fr
+            </p>
+        </div>
+
+        <!-- Colonne 2 : Logo + Réseaux -->
+        <div class="footer-col center">
+            <br>
+            <img src="./assets/images/logoa3.png" alt="Logo Le Plateau" height="80">
+            <br>
+            <div class="socials">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </div>
+
+        <!-- Colonne 3 : Horaires -->
+        <div class="footer-col center">
+            <!-- <h3>Horaires</h3> -->
+            <p>
+                <strong>Lundi</strong> : fermé<br>
+                <strong>Mardi</strong> : 16h – 21h30<br>
+                <strong>Mercredi</strong> : 16h – 23h<br>
+                <strong>Jeudi</strong> : 16h – 22h<br>
+                <strong>Vendredi</strong> : 16h – 22h<br>
+                <strong>Samedi</strong> : 9h30 – 12h / 17h – 22h<br>
+                <strong>Dimanche</strong> : 14h – 19h
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Le Plateau – Café culturel ludique et associatif
+    </div>
+</footer>
 
 <button id="topBtn">↑</button>
 
