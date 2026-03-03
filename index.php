@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Le Plateau – Café culturel ludique et associatif à Bègles</title>
+
+<meta name="description" content="Le Plateau est un café culturel ludique et associatif à Bègles : jeux de société, quiz, stand-up, impro et événements toute l’année.">
+<meta property="og:title" content="Le Plateau – Café culturel à Bègles">
+<meta property="og:description" content="Jeux de société et évennements conviviaux au cœur de Bègles.">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css" type="text/css" media="screen" />
+
+<script type="application/ld+json">
+	{
+	"@context": "https://schema.org",
+	"@type": "CafeOrCoffeeShop",
+	"name": "Le Plateau",
+	"image": "https://tonsite.fr/images/logo.png",
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": "5 Place du 14 Juillet",
+		"addressLocality": "Bègles",
+		"postalCode": "33130",
+		"addressCountry": "FR"
+	},
+	"telephone": "06 73 21 12 17",
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.8",
+		"reviewCount": "127"
+	}
+	}
+</script>
+
+</head>
+
+<body>
+<div class="site-container">
+<header>
+<header>
+    <?php include 'components/navbar.html'; ?>
+    
+</header>
+
+<section class="hero fade-up">
+    <h1>Le Plateau</h1>
+    <h3>Café culturel ludique et associatif</h3>
+
+    <!-- <img src="./assets/images/LePlateauCCLA.png" alt=""> -->
+    <p>
+        Jeux de société, stand-up, impro, quiz, belote :
+        des événements toute l’année et beaucoup de rires.
+        Un lieu vivant pour se retrouver et partager.
+    </p>
+    <a href="#cafe" class="btn">Découvrir le lieu</a>
+</section>
+
+<section class="univers fade-up">
+
+    <!-- <h2 class="section-title">Découvrir Le Plateau</h2> -->
+
+    <div class="univers-grid">
+
+        <!-- Les jeux -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo/1.png" alt="Jeux de société au Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Les jeux</h3>
+                <p>
+                    Plus de 300 jeux de société pour tous les âges :
+                    stratégie, ambiance, famille ou experts.
+                    Un véritable terrain de jeu à découvrir.
+                </p>
+                <a href="lieu.php#jeux" class="btn-small">> en savoir plus ...</a>
+            </div>
+        </div>
+
+        <!-- Le lieu -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo/2.png" alt="Le lieu Le Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Le lieu</h3>
+                <p>
+                    Un café culturel chaleureux au cœur de Bègles,
+                    pensé pour se retrouver, discuter
+                    et partager autour d’un verre.
+                </p>
+                <a href="lieu.php" class="btn-small">> en savoir plus ...</a>
+            </div>
+        </div>
+
+        <!-- Les soirées -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo/3.png" alt="Soirées événements au Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Les soirées</h3>
+                <p>
+                    Stand-up, impro, quiz, tournois…
+                    Une programmation vivante toute l’année
+                    pour rire et vibrer ensemble.
+                </p>
+                <a href="evenements.php" class="btn-small">> en savoir plus ...</a>
+            </div>
+        </div>
+
+        <!-- L’association -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo/4.png" alt="Association Le Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>L’association</h3>
+                <p>
+                    Un projet collectif et non lucratif,
+                    participatif, inclusif et ancré
+                    dans la vie locale.
+                </p>
+                <a href="association.php" class="btn-small">> en savoir plus ...</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="gallery fade-up">
+    <h2 style="text-align:center;margin-bottom:3rem;">📸 Galerie</h2>
+    <div class="gallery-grid">
+        <img src="./assets/images/photo1.jpg" alt="">
+        <img src="./assets/images/photo2.jpg" alt="">
+        <img src="./assets/images/photo3.jpg" alt="">
+        <img src="./assets/images/photo4.jpg" alt="">
+    </div>
+</section>
+
+<section class="newsletter fade-up">
+    <h2> Newsletter</h2>
+    <p>Recevez la programmation et les événements chaque mois.</p>
+
+    <form>
+        <input type="email" placeholder="Votre adresse email" required>
+        <button type="submit">S’inscrire</button>
+    </form>
+</section>
+
+<section id="histoire">
+    <h2 style="text-align:center;margin-bottom:4rem;">Notre histoire</h2>
+    <div class="timeline">
+
+        <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <h3>Le déclic au Canada</h3>
+            <p>Bastien et Fanny découvrent les cafés-jeux profondément ancrés dans la culture locale.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <h3> Le projet naît</h3>
+            <p>Retour en France avec une conviction : créer un lieu convivial, inclusif et vivant.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <h3>L’association se lance</h3>
+            <p>L'association est créée et organise ses premiers événements.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <h3>Premières soirées jeux</h3>
+            <p>La ZAP de Bègles nous ouvre ses portes pendant un an pour lancer nos premières soirées jeux.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+            <div class="timeline-dot"></div>
+            <h3>Ouverture du café</h3>
+            <p>Le Plateau ouvre enfin ses portes place du 14 Juillet à Bègles.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-523775c9-027d-487d-850c-03de0a50f5b7" data-elfsight-app-lazy></div>
+
+
+<?php include 'components/footer.html'; ?>
+
+<button id="topBtn">↑</button>
+
+<script>
+
+/* Scroll Animation */
+const faders = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+},{ threshold:0.2 });
+
+faders.forEach(el => observer.observe(el));
+
+/* Counter Animation */
+const counter = document.querySelector('.counter');
+let started = false;
+
+const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting && !started){
+            started = true;
+
+            const target = +counter.getAttribute('data-target');
+            const duration = 2000;
+            const startTime = performance.now();
+
+            const animate = (time) => {
+                const progress = Math.min((time - startTime) / duration, 1);
+                counter.innerText = Math.floor(progress * target);
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    counter.innerText = target + "+";
+                }
+            };
+
+            requestAnimationFrame(animate);
+        }
+    });
+},{ threshold:0.5 });
+
+counterObserver.observe(counter);
+
+/* Back to top */
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+    topBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
+topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+</script>
+</div>
+</body>
+</html>
