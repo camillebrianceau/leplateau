@@ -47,22 +47,19 @@ programLightbox.addEventListener('click', (e) => {
 <nav class="navbar">
 
     <!-- Liens gauche -->
-    <div class="nav-left">
-        <a href="lieu.html">Le lieu</a>
-        <a href="event.html">Les événements</a>
-    </div>
-
-    <!-- Logo centré -->
-    <div class="nav-center">
+     <div class="nav-logo">
         <a href="index.html">
             <img src="./assets/images/logo.png" alt="Logo Le Plateau" height="70">
         </a>
     </div>
 
-    <!-- Liens droite -->
     <div class="nav-right">
-        <a href="association.html">L'association</a>
-        <a href="contact.html">Nous contacter</a>
+        <a href="./index.html">Accueil</a>
+        <a href="./lieu.html">Le lieu</a>
+        <a href="./event.html">Les événements</a>
+  
+        <a class="selected" href="./association.html">L'association</a>
+        <a href="./contact.html">Nous contacter</a>
     </div>
 
 </nav>
@@ -71,13 +68,13 @@ programLightbox.addEventListener('click', (e) => {
 <!-- INTRO -->
 <section class="events-intro fade-up">
 
-    <h1 class="section-title">Les événements</h1>
+    <h1 class="events-title">Les événements</h1>
 
-    <p class="intro-text">
+    <div class="subtitle">
         Chaque mois, Le Plateau propose une programmation variée :
         humour, jeux, culture, rencontres et surprises.
         Il y a toujours une bonne raison de passer.
-    </p>
+    </div>
 
 </section>
 
@@ -119,18 +116,18 @@ programLightbox.addEventListener('click', (e) => {
 
 
 
-            <img src="<?php echo $imagePath; ?>" 
+            <img src="./assets/images/programmes/programme-03-2026.jpg" 
                  alt="Programme du mois" 
                  class="program-image">
 
-            <a href="<?php echo $imagePath; ?>" 
+            <!-- <a href="<?php echo $imagePath; ?>" 
                class="simple-link" 
                download>
                > Télécharger le programme
-            </a>
+            </a> -->
 
 
-            <p>Le programme du mois arrive bientôt ✨</p>
+            <!-- <p>Le programme du mois arrive bientôt ✨</p> -->
 
 
     </div>

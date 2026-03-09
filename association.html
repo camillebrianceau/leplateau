@@ -14,6 +14,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="screen" />
 
+<script>
+    const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+        navbar.classList.add('sticky');
+    } else {
+        navbar.classList.remove('sticky');
+    }
+});
+</script>
 </head>
 
 <body>
@@ -26,21 +37,18 @@
 <nav class="navbar">
 
     <!-- Liens gauche -->
-    <div class="nav-left">
-        <a href="./lieu.html">Le lieu</a>
-        <a href="./event.html">Les événements</a>
-    </div>
-
-    <!-- Logo centré -->
-    <div class="nav-center">
+     <div class="nav-logo">
         <a href="index.html">
             <img src="./assets/images/logo.png" alt="Logo Le Plateau" height="70">
         </a>
     </div>
 
-    <!-- Liens droite -->
     <div class="nav-right">
-        <a href="./association.html">L'association</a>
+        <a href="./index.html">Accueil</a>
+        <a href="./lieu.html">Le lieu</a>
+        <a href="./event.html">Les événements</a>
+  
+        <a class="selected" href="./association.html">L'association</a>
         <a href="./contact.html">Nous contacter</a>
     </div>
 
@@ -50,24 +58,27 @@
 
 <section class="asso fade-up">
 
-    <h1 class="title"> L’association</h1>
+    <div class="asso-back">
+        <h1 class="title"> L’association</h1>
+
+
+        <div class= "subtitle">
+            Le Plateau est un projet collectif et non lucratif.
+            C’est un café culturel associatif imaginé pour créer
+            un lieu de rencontres, de jeux et d’événements ouverts à toutes et tous.
+            <br>
+            <br>
+            Ici, on joue, on rit, on partage.
+            Et surtout, on construit ensemble un espace vivant
+            ancré dans la vie locale.
+        </div>
+        <div class="scroll-indicator"></div>
+    </div>
+
+    <!-- <div class="section-divider"></div> -->
 
     <div class="asso-grid">
 
-        <!-- Concept -->
-        <div class="asso-card">
-            <h2>Le concept</h2>
-            <p>
-                Le Plateau est un projet collectif et non lucratif.
-                C’est un café culturel associatif imaginé pour créer
-                un lieu de rencontres, de jeux et d’événements ouverts à toutes et tous.
-            </p>
-            <p>
-                Ici, on joue, on rit, on partage.
-                Et surtout, on construit ensemble un espace vivant
-                ancré dans la vie locale.
-            </p>
-        </div>
 
         <!-- Pourquoi payant -->
         <div class="asso-card">
@@ -87,57 +98,23 @@
 
         <!-- Comment rejoindre -->
         <div class="asso-card">
-            <h2>Comment rejoindre l’association ?</h2>
+            <h2>Comment ça fonctionne ?</h2>
             <p>
-                Il suffit de remplir un formulaire d’adhésion
+                Pour adhérer, il suffit de remplir un formulaire d’adhésion
                 directement au café ou lors d’un événement.
             </p>
             <p>
                 L’adhésion est valable pour l’année
-                et donne accès à l’ensemble des activités.
-            </p>
-        </div>
-
-        <!-- AG -->
-        <div class="asso-card">
-            <h2>Les assemblées générales</h2>
-            <p>
-                Les membres participent aux assemblées générales.
-                Chaque adhérent dispose d’une voix
-                pour voter les décisions importantes.
-            </p>
-            <p>
-                Le Plateau fonctionne de manière participative :
-                les idées et initiatives sont les bienvenues.
+                et donne accès à l'ensemble de nos jeux 
+                et de nos évenements.
             </p>
         </div>
 
     </div>
 
 </section>
-<section class="adhesion fade-up">
 
-    <h2 class="section-title">💛 Rejoindre l’aventure 💛</h2>
-
-    <div class="adhesion-box">
-        <p>
-            Devenir adhérent·e, c’est soutenir un projet local,
-            indépendant et participatif.
-            C’est permettre au Plateau de continuer à vivre,
-            à proposer des événements et à enrichir sa ludothèque.
-        </p>
-
-        <p>
-            L’adhésion se fait directement au café.
-            Un simple formulaire et vous faites partie de l’aventure ✨
-        </p>
-
-        <a href="contact.php" class="cta-adhesion">
-            > Adhérer maintenant
-        </a>
-    </div>
-
-</section>
+<div class="section-divider"></div>
 
 <!-- TARIFS -->
 <section class="tarifs fade-up">
@@ -185,6 +162,22 @@
     </div>
 
 </section>
+
+<div class="section-divider"></div>
+
+<section class="adhesion fade-up">
+
+    <h2 class="section-title">Envie de rejoindre l'aventure ?</h2>
+
+    <div class="adhesion-box">
+        
+        <a href="contact.php" class="cta-adhesion">
+            > Adhérer maintenant
+        </a>
+    </div>
+
+</section>
+
 
 <footer class="footer">
     <div class="footer-container">

@@ -49,22 +49,25 @@
 <nav class="navbar">
 
     <!-- Liens gauche -->
-    <div class="nav-left">
-        <a href="lieu.html">Le lieu</a>
-        <a href="event.html">Les événements</a>
-    </div>
-
-    <!-- Logo centré -->
-    <div class="nav-center">
+     <div class="nav-logo">
         <a href="index.html">
             <img src="./assets/images/logo.png" alt="Logo Le Plateau" height="70">
         </a>
     </div>
 
-    <!-- Liens droite -->
     <div class="nav-right">
-        <a href="association.html">L'association</a>
-        <a href="contact.html">Nous contacter</a>
+        <a href="./index.html">Accueil</a>
+        <a href="./lieu.html">Le lieu</a>
+        <a href="./event.html">Les événements</a>
+  
+        <a class="selected" href="./association.html">L'association</a>
+        <a href="./contact.html">Nous contacter</a>
+    </div>
+
+    <div class="burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
     </div>
 
 </nav>
@@ -72,17 +75,27 @@
 </header>
 
 <section class="hero fade-up">
-    <h1>Le Plateau</h1>
-    <h3>Café culturel ludique et associatif</h3>
+    <div class="hero-overlay"></div>
 
-    <!-- <img src="./assets/images/LePlateauCCLA.png" alt=""> -->
-    <p>
-        Jeux de société, stand-up, impro, quiz, belote :
-        des événements toute l’année et beaucoup de rires.
-        Un lieu vivant pour se retrouver et partager.
-    </p>
-    <a href="#cafe" class="btn">Découvrir le lieu</a>
+    <div class="hero-content">
+
+         <img src="./assets/images/LePlateau.png" alt="Description de l'image" class="hero-image">
+        <!-- <h1>Le Plateau</h1>
+        <h3>Café culturel ludique et associatif</h3> -->
+
+        <!-- <p>
+            Jeux de société, stand-up, impro, quiz, belote :
+            des événements toute l’année et beaucoup de rires.
+            <br>
+            Un lieu vivant pour se retrouver et partager.
+        </p> -->
+
+        <!-- <a href="lieu.php" class="arrow-btn"></a>    -->
+    </div>
 </section>
+
+<div class="section-divider"></div>
+
 
 <section class="univers fade-up">
 
@@ -93,7 +106,7 @@
         <!-- Les jeux -->
         <div class="univers-card">
             <div class="univers-img">
-                <img src="assets/images/logo/1.png" alt="Jeux de société au Plateau">
+                <img src="assets/images/logo/6.png" alt="Jeux de société au Plateau">
             </div>
             <div class="univers-content">
                 <h3>Les jeux</h3>
@@ -157,8 +170,10 @@
     </div>
 </section>
 
+<div class="section-divider"></div>
+
 <section class="gallery fade-up">
-    <h2 style="text-align:center;margin-bottom:3rem;">📸 Galerie</h2>
+    <!-- <h2 style="text-align:center;margin-bottom:3rem;">Galerie</h2> -->
     <div class="gallery-grid">
         <img src="./assets/images/photo1.jpg" alt="">
         <img src="./assets/images/photo2.jpg" alt="">
@@ -166,6 +181,8 @@
         <img src="./assets/images/photo4.jpg" alt="">
     </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section class="newsletter fade-up">
     <h2> Newsletter</h2>
@@ -177,7 +194,7 @@
     </form>
 </section>
 
-<section id="histoire">
+<!-- <section id="histoire">
     <h2 style="text-align:center;margin-bottom:4rem;">Notre histoire</h2>
     <div class="timeline">
 
@@ -212,14 +229,32 @@
         </div>
 
     </div>
+</section> -->
+
+<div class="section-divider"></div>
+<section class="reviews fade-up">
+    <h2 style="text-align:center;margin-bottom:3rem;">Ils parlent de nous</h2>
+
+    <div class="reviews-grid">
+        <div class="review-card">
+            <p>★★★★★</p>
+            <p>Super ambiance et équipe adorable !</p>
+            <strong>– Camille</strong>
+        </div>
+
+        <div class="review-card">
+            <p>★★★★★</p>
+            <p>Un lieu unique à Bègles, on adore !</p>
+            <strong>– Thomas</strong>
+        </div>
+
+        <div class="review-card">
+            <p>★★★★★</p>
+            <p>Les soirées quiz sont incroyables.</p>
+            <strong>– Sarah</strong>
+        </div>
+    </div>
 </section>
-
-
-
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-523775c9-027d-487d-850c-03de0a50f5b7" data-elfsight-app-lazy></div>
-
 
 <footer class="footer">
     <div class="footer-container">
@@ -284,37 +319,6 @@ const observer = new IntersectionObserver(entries => {
 
 faders.forEach(el => observer.observe(el));
 
-/* Counter Animation */
-const counter = document.querySelector('.counter');
-let started = false;
-
-const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting && !started){
-            started = true;
-
-            const target = +counter.getAttribute('data-target');
-            const duration = 2000;
-            const startTime = performance.now();
-
-            const animate = (time) => {
-                const progress = Math.min((time - startTime) / duration, 1);
-                counter.innerText = Math.floor(progress * target);
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    counter.innerText = target + "+";
-                }
-            };
-
-            requestAnimationFrame(animate);
-        }
-    });
-},{ threshold:0.5 });
-
-counterObserver.observe(counter);
-
 /* Back to top */
 const topBtn = document.getElementById("topBtn");
 
@@ -324,6 +328,13 @@ window.addEventListener("scroll", () => {
 
 topBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+const burger = document.getElementById("burger");
+const nav = document.querySelector(".nav-right");
+
+burger.addEventListener("click", () => {
+    nav.classList.toggle("active");
 });
 
 </script>
