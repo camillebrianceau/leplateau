@@ -56,9 +56,9 @@ programLightbox.addEventListener('click', (e) => {
     <div class="nav-right">
         <a href="./index.html">Accueil</a>
         <a href="./lieu.html">Le lieu</a>
-        <a href="./event.html">Les événements</a>
+        <a class="selected" href="./event.html">Les événements</a>
   
-        <a class="selected" href="./association.html">L'association</a>
+        <a href="./association.html">L'association</a>
         <a href="./contact.html">Nous contacter</a>
     </div>
 
@@ -66,81 +66,141 @@ programLightbox.addEventListener('click', (e) => {
     
 </header>
 <!-- INTRO -->
-<section class="events-intro fade-up">
 
-    <h1 class="events-title">Les événements</h1>
+<section class="asso-hero">
 
-    <div class="subtitle">
-        Chaque mois, Le Plateau propose une programmation variée :
-        humour, jeux, culture, rencontres et surprises.
-        Il y a toujours une bonne raison de passer.
+    <div class="asso-left">
+        <h1>Les événements</h1>
+
+        <p>
+            Le Plateau est un projet collectif et non lucratif.
+            C’est un café culturel associatif imaginé pour créer
+            un lieu de rencontres, de jeux et d’événements ouverts à toutes et tous.
+        </p>
+
+        <p>
+            Chaque mois, Le Plateau propose une programmation variée :
+            humour, jeux, culture, rencontres et surprises.
+            Il y a toujours une bonne raison de passer.
+        </p>
+    </div>
+
+    <div class="asso-right">
+        <img src="./assets/images/photo-event.jpeg" alt="Le Plateau café ludique">
     </div>
 
 </section>
 
-<!-- EVENTS FIXES -->
-<section class="events-highlights fade-up">
 
-    <div class="events-grid">
 
-        <div class="event-card">
-            <h3>Stand-up</h3>
-            <p>Des soirées humour avec des artistes locaux et émergents.</p>
+
+<div class="section-divider"></div>
+
+
+<section class="univers fade-up">
+
+    <!-- <h2 class="section-title">Découvrir Le Plateau</h2> -->
+
+    <div class="univers-grid">
+
+        <!-- Les jeux -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo3/10.png" alt="Jeux de société au Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Stand up</h3>
+                <p>
+                    Des soirées humour avec des artistes locaux et émergents.
+                </p>
+            </div>
         </div>
 
-        <div class="event-card">
-            <h3>Impro</h3>
-            <p>Des matchs d’impro et spectacles participatifs.</p>
+        <!-- Le lieu -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo3/11.png" alt="Le lieu Le Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Théâtre d'impro</h3>
+                <p>
+                    Des matchs d’impro et spectacles participatifs.
+                </p>
+            </div>
         </div>
 
-        <div class="event-card">
-            <h3>Quiz & Blind Tests</h3>
-            <p>Testez votre culture générale dans une ambiance conviviale.</p>
+        <!-- Les soirées -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo3/12.png" alt="Soirées événements au Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Quiz</h3>
+                <p>
+                    WinterCup, quiz, blind tests, mini-jeux : Testez votre 
+                    culture générale dans une ambiance conviviale.
+                </p>
+            </div>
         </div>
 
-        <div class="event-card">
-            <h3>Tournois</h3>
-            <p>Belote, tarot et jeux modernes pour tous les niveaux.</p>
+        <!-- L’association -->
+        <div class="univers-card">
+            <div class="univers-img">
+                <img src="assets/images/logo3/13.png" alt="Association Le Plateau">
+            </div>
+            <div class="univers-content">
+                <h3>Tournois de cartes</h3>
+                <p>
+                    Belote, tarot et jeux modernes pour tous les niveaux.
+                </p>
+            </div>
         </div>
 
     </div>
-
 </section>
 
-<!-- PDF DU MOIS -->
-<section class="events-program fade-up">
-
-    <h2 class="section-title">Le programme du mois</h2>
-
-    <div class="program-container">
+<div class="section-divider"></div>
 
 
-
-            <img src="./assets/images/programmes/programme-03-2026.jpg" 
-                 alt="Programme du mois" 
-                 class="program-image">
-
-            <!-- <a href="<?php echo $imagePath; ?>" 
-               class="simple-link" 
-               download>
-               > Télécharger le programme
-            </a> -->
+<section class="event-hero">
 
 
-            <!-- <p>Le programme du mois arrive bientôt ✨</p> -->
-
-
+    <div class="event-left">
+        <img src="./assets/images/programmes/programme-03-2026.jpg" alt="Le Plateau café ludique">
     </div>
 
+
+    <div class="event-right">
+        <h1>Le programme du mois</h1>
+
+        <p>
+           Tous les mois, retrouvez une nouvelle programmation bkjrghe,
+           pour vous inscrire u reserver vous pouver nous ocntacter via fb, instagral ou par mail 
+        </p>
+
+        <p>
+            <a href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/">
+                <img src="./assets/images/socials/15.png" alt="Logo Le Plateau" height="50">
+            </a>
+            <a href="https://www.instagram.com/leplateau.ccla/">
+                <img src="./assets/images/socials/14.png" alt="Logo Le Plateau" height="50">
+            </a>
+            <a href="leplateau@gmail.com">
+                <img src="./assets/images/socials/16.png" alt="Logo Le Plateau" height="50">
+            </a>
+            
+        </p>
+    </div>
+
+
+
 </section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="programLightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="">
-</div>
+<div class="section-divider"></div>
 
-<!-- INFOS -->
+
+
+<!-- INFOS
 <section class="events-info fade-up">
 
     <div class="info-box">
@@ -151,7 +211,7 @@ programLightbox.addEventListener('click', (e) => {
         </p>
     </div>
 
-</section>
+</section> -->
 <footer class="footer">
     <div class="footer-container">
 
@@ -162,7 +222,7 @@ programLightbox.addEventListener('click', (e) => {
                 <br>
                 5 Place du 14 Juillet<br>
                 33130 Bègles<br><br>
-                05 00 00 00 00<br>
+                06 73 21 12 17<br>
                 contact@leplateau.fr
             </p>
         </div>
@@ -173,8 +233,15 @@ programLightbox.addEventListener('click', (e) => {
             <img src="./assets/images/logoa3.png" alt="Logo Le Plateau" height="80">
             <br>
             <div class="socials">
-                <a href="#" target="_blank">Facebook</a>
-                <a href="#" target="_blank">Instagram</a>
+                <a href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/">
+                    <img src="./assets/images/socials/15.png" alt="Logo Le Plateau" height="30">
+                </a>
+                <a href="https://www.instagram.com/leplateau.ccla/">
+                    <img src="./assets/images/socials/14.png" alt="Logo Le Plateau" height="30">
+                </a>
+                <a href="contacte@leplateau-ccla.fr">
+                    <img src="./assets/images/socials/16.png" alt="Logo Le Plateau" height="30">
+                </a>
             </div>
         </div>
 

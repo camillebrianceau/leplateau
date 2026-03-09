@@ -13,26 +13,15 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="screen" />
+
 <script>
-const images = document.querySelectorAll('.gallery-mosaic img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
-const closeBtn = document.querySelector('.close');
+    const navbar = document.querySelector('.navbar');
 
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-    });
-});
-
-closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-});
-
-lightbox.addEventListener('click', (e) => {
-    if(e.target !== lightboxImg){
-        lightbox.style.display = 'none';
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 50){
+        navbar.classList.add('sticky');
+    } else {
+        navbar.classList.remove('sticky');
     }
 });
 </script>
@@ -41,7 +30,8 @@ lightbox.addEventListener('click', (e) => {
 <body>
 <div class="site-container">
 <header>
-<header>
+
+
 
 
 <nav class="navbar">
@@ -55,117 +45,147 @@ lightbox.addEventListener('click', (e) => {
 
     <div class="nav-right">
         <a href="./index.html">Accueil</a>
-        <a class="selected" href="./lieu.html">Le lieu</a>
+        <a href="./lieu.html">Le lieu</a>
         <a href="./event.html">Les événements</a>
   
-        <a href="./association.html">L'association</a>
+        <a class="selected" href="./association.html">L'association</a>
         <a href="./contact.html">Nous contacter</a>
     </div>
 
 </nav>
     
 </header>
-<!-- INTRO -->
 
 
 <section class="asso-hero">
 
     <div class="asso-left">
-        <h1>Le lieu</h1>
+        <h1>L’ASSOCIATION</h1>
 
         <p>
-            Le Plateau est né d’une envie simple :
-                créer un espace chaleureux à Bègles
-                où l’on puisse se retrouver autour du jeu,
-                de la culture et du partage.
+            Le Plateau est un projet collectif et non lucratif.
+            C’est un café culturel associatif imaginé pour créer
+            un lieu de rencontres, de jeux et d’événements ouverts à toutes et tous.
         </p>
 
         <p>
-            Après des mois de réflexion, de travaux
-                et d’énergie collective,
-                le lieu a ouvert ses portes
-                pour devenir un espace vivant et accessible à toutes et tous.
+            Ici, on joue, on rit, on partage.
+            Et surtout, on construit ensemble un espace vivant
+            ancré dans la vie locale.
         </p>
     </div>
 
     <div class="asso-right">
-        <img src="./assets/images/photo-lieu.jpeg" alt="Le Plateau café ludique">
+        <img src="./assets/images/photo1.jpg" alt="Le Plateau café ludique">
+    </div>
+
+</section>
+
+<section class="asso fade-up">
+
+    <!-- <div class="section-divider"></div> -->
+
+    <div class="asso-grid">
+
+
+        <!-- Pourquoi payant -->
+        <div class="asso-card">
+            <h2>Pourquoi une adhésion payante ?</h2>
+            <p>
+                L’adhésion permet de financer les activités,
+                d’acheter de nouveaux jeux,
+                d’organiser des événements
+                et de maintenir des tarifs solidaires.
+            </p>
+            <p>
+                C’est aussi un engagement symbolique :
+                devenir membre, c’est soutenir le projet
+                et participer à son évolution.
+            </p>
+        </div>
+
+        <!-- Comment rejoindre -->
+        <div class="asso-card">
+            <h2>Comment ça fonctionne ?</h2>
+            <p>
+                Pour adhérer, il suffit de remplir un formulaire d’adhésion
+                directement au café ou lors d’un événement.
+            </p>
+            <p>
+                L’adhésion est valable pour l’année
+                et donne accès à l'ensemble de nos jeux 
+                et de nos évenements.
+            </p>
+        </div>
+
     </div>
 
 </section>
 
 <div class="section-divider"></div>
 
-<!-- BOIRE & MANGER -->
-<section class="lieu-food fade-up">
+<!-- TARIFS -->
+<section class="tarifs fade-up">
 
-    <h2 class="section-title">Boire & manger</h2>
+    <h2 class="section-title">  Les formules d’adhésion</h2>
 
-    <div class="food-grid">
+    <div class="tarifs-grid">
 
-        <div class="food-card">
-            <h3>Planches à partager</h3>
-            <p>
-                Des planches conviviales à partager :
-                fromages, charcuterie et options végétariennes.
-                Parfait pour accompagner une partie entre amis.
-            </p>
+        <div class="tarif-card">
+            <h3>Journalière</h3>
+            <div class="price">5€</div>
+            <p>Parfait pour découvrir le lieu le temps d’une soirée.</p>
         </div>
 
-        <div class="food-card">
-            <h3>Bières & vins</h3>
-            <p>
-                Une sélection de bières locales,
-                du vin rouge, blanc ou rosé,
-                pour trinquer dans une ambiance détendue.
-            </p>
+        <div class="tarif-card highlight">
+            <h3>Année complète</h3>
+            <div class="price">35€</div>
+            <p>La formule idéale pour profiter pleinement du Plateau.</p>
         </div>
 
-        <div class="food-card">
-            <h3>Softs</h3>
-            <p>
-                Softs, jus, boissons sans alcool :
-                pour tous les âges et toutes les envies.
-            </p>
+        <div class="tarif-card">
+            <h3>Moins de 18 ans</h3>
+            <div class="price">12,50€</div>
+            <p>Pour les jeunes joueurs et joueuses.</p>
+        </div>
+
+        <div class="tarif-card">
+            <h3>Tarif solidaire</h3>
+            <div class="price">12,50€</div>
+            <p>Parce que le jeu doit rester accessible à tous.</p>
+        </div>
+
+        <div class="tarif-card">
+            <h3>Famille</h3>
+            <div class="price">35€</div>
+            <p>Pour partager des moments ludiques en famille.</p>
+        </div>
+
+        <div class="tarif-card">
+            <h3>Mécénat</h3>
+            <div class="price">45€</div>
+            <p>Soutenir davantage le développement du projet.</p>
         </div>
 
     </div>
 
 </section>
 
-<section class="section-divider"></section>
-<!-- GALERIE -->
-<section class="lieu-gallery fade-up">
+<div class="section-divider"></div>
 
-    <h2 class="section-title">L’ambiance</h2>
+<section class="adhesion fade-up">
 
-    <div class="gallery-mosaic">
+    <h2 class="section-title">Envie de rejoindre l'aventure ?</h2>
 
-        <img src="assets/images/photo1.jpg" alt="" class="big">
-        <img src="assets/images/photo2.jpg" alt="">
-        <img src="assets/images/photo3.jpg" alt="">
-        <img src="assets/images/photo4.jpg" alt="" class="tall">
-        <img src="assets/images/photo1.jpg" alt="">
-        <img src="assets/images/photo2.jpg" alt="">
-
+    <div class="adhesion-box">
+        
+        <a href="contact.php" class="cta-adhesion">
+            > Adhérer maintenant
+        </a>
     </div>
 
 </section>
 
-
-<!-- CONCLUSION
-<section class="lieu-conclusion fade-up">
-
-    <div class="conclusion-box">
-        <p>
-            Le Plateau, c’est un lieu de rencontres,
-            de rires et de moments partagés.
-            Un espace vivant au cœur de Bègles,
-            pensé pour créer du lien.
-        </p>
-    </div>
-
-</section> -->
 
 <footer class="footer">
     <div class="footer-container">
@@ -188,15 +208,8 @@ lightbox.addEventListener('click', (e) => {
             <img src="./assets/images/logoa3.png" alt="Logo Le Plateau" height="80">
             <br>
             <div class="socials">
-                <a href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/">
-                    <img src="./assets/images/socials/15.png" alt="Logo Le Plateau" height="30">
-                </a>
-                <a href="https://www.instagram.com/leplateau.ccla/">
-                    <img src="./assets/images/socials/14.png" alt="Logo Le Plateau" height="30">
-                </a>
-                <a href="contacte@leplateau-ccla.fr">
-                    <img src="./assets/images/socials/16.png" alt="Logo Le Plateau" height="30">
-                </a>
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Instagram</a>
             </div>
         </div>
 

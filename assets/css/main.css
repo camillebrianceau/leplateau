@@ -38,7 +38,7 @@ body {
     font-family: 'arial';
     /* background: url('../images/back-white.png') center/cover fixed; */
     /* background: var(--rose-ouverture) center/cover fixed; */
-    background: #fff;
+    background: #ffffff;
     color: var(--bleu-marine);
     line-height: 1.7;
     overflow-x: hidden;
@@ -62,7 +62,7 @@ h2 {
    NAVBAR
 ===================================================== */
 
-.navbar {
+/* .navbar {
     background: white;
     border-radius: 50px;
     padding: 1rem 2rem;
@@ -74,13 +74,33 @@ h2 {
     top: 15px;
     z-index: 1000;
     font-family: 'Sailors';
+} */
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 40px;
+
+    background: transparent;
 }
 
-.nav-right {
+/* .nav-right {
     display: flex;
     gap: 30px;
     justify-content: flex-end;
     margin-right: 10px;
+} */
+
+.nav-right{
+    display:flex;
+    gap:40px;
+    align-items:center;
 }
 
 .nav-logo {
@@ -93,6 +113,7 @@ h2 {
 .navbar a {
     text-decoration: none;
     font-size: large;
+    font-family:'Sailors';
     color: var(--bleu-marine);
     position: relative;
     transition: 0.3s;
@@ -100,12 +121,15 @@ h2 {
 
 .navbar a:hover {
     color: var(--rose);
-    transition: 0.3s;
-    transform: scale(1.05);
+    /* transition: 0.3s;
+    transform: scale(1.05); */
 }
 
-.navbar a .selected {
+.navbar a.selected {
     color: var(--rose);
+}
+.navbar.scrolled{
+    background:white;
 }
 
 .nav-center img {
@@ -188,66 +212,46 @@ h2 {
 
 /* ===== HERO UPGRADE ===== */
 
+
 .hero {
     position: relative;
-    /* padding: 10rem 2rem; */
+    width: 100%;
+    height: 80vh; /* prend toute la hauteur de l'écran */
     text-align: center;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Image de fond */
+    background: url('../images/photo1.jpg') center/cover no-repeat;
+    /* couleur blanche avec transparence si tu veux un léger voile */
+    background-blend-mode: lighten;
+    opacity: 0.9; /* si tu veux réduire l'intensité de la bg */
+    margin-bottom: 100px;
 }
 
-.hero-overlay {
+.hero::before {
+    content: "";
     position: absolute;
     inset: 0;
-    /* background: url(../images/photo1.jpg) center flex; */
-    opacity: 0.8;
-    z-index: 0;
-    /* width: 100% */
+    background: rgba(251, 241, 241, 0.8); /* voile blanc transparent */
+    z-index: 1;
 }
 
-/* linear-gradient(135deg, var(--rose) 0%, var(--jaune) 100%) */
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 900px;
-    margin: auto;
-
+    z-index: 2; /* pour être au-dessus de l'overlay */
 }
 
 .hero-image {
-    max-width: 100%;
+    max-width: 90%; /* ajustable */
     height: auto;
     display: block;
-    margin: 0 auto; /* centre l'image */
-}
-.hero-content h1 {
-    font-family: 'TanSongBird';
-    font-size: 5rem;
-    text-transform: uppercase;
-
-}
-.hero-content h3 {
-    font-family: 'Sailors';
-    font-size: 3rem;   
-}
-
-.hero-content p {
-    font-family: 'Sailors';
-    font-size: 1.5rem;   
+    margin: auto;
 }
 
 
-.arrow-btn {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: url('../images/fleche-jaune.png') center no-repeat;
-    background-size: contain;
-    transition: transform 0.3s ease;
-}
-
-.arrow-btn:hover {
-    transform: translateX(5px);
-}
 /* =====================================================
    BUTTONS
 ===================================================== */
@@ -277,7 +281,7 @@ h2 {
 
 .fade-up {
     opacity: 0;
-    transform: translateY(40px);
+    /* transform: translateY(40px); */
     transition: all 0.8s ease;
 }
 
@@ -290,6 +294,71 @@ h2 {
 /* =====================================================
    ASSOCIATION
 ===================================================== */
+
+
+.asso-hero{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    gap:80px;
+
+    padding:120px 40px;
+}
+
+.asso-left h1{
+    font-family:'TanSongBird';
+    font-size:2rem;
+    color:var(--jaune);
+    margin-bottom:40px;
+    text-transform: uppercase;
+}
+
+.asso-left p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:20px;
+    max-width:500px;
+}
+
+
+.asso-right img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+@media (max-width:900px){
+
+.asso-hero{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.asso-left p{
+    margin:auto;
+}
+
+}
+
+
+.asso-right{
+    position:relative;
+}
+
+.asso-right::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:var(--jaune);
+    border-radius:20px;
+    top:10px;
+    left:15px;
+    z-index:-1;
+}
+
+
+
 
 .asso-back{
     position: relative;
@@ -636,26 +705,211 @@ h2 {
     REVIEWS
 ===================================================== */
 
+
 .reviews {
-    margin: 80px 10%;
+    margin: 80px 5%;
 }
 
 .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    display: flex;
+    justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap; /* pour mobile */
+    align-items: flex-start;
 }
 
 .review-card {
-    background: white;
+    position: relative;
+    background: rgba(255, 255, 255, 1);
     padding: 2rem;
     border-radius: 30px;
+    width: 300px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    overflow: visible; /* pour que le carré coloré dépasse */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Carré coloré permanent derrière */
+.review-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    z-index: -1;
+    /* transform: rotate(-2deg); */
+}
+
+/* Couleurs des carrés
+.review-rose::before {
+    background: var(--rose);
+}
+.review-bleu::before {
+    background: var(--bleu);
+} */
+
+/* Décalage vertical */
+.review-top {
+    margin-top: -20px; /* remonte un peu */
+}
+
+.review-bottom {
+    margin-top: 20px; /* descend un peu */
+}
+
+/* Texte */
+.review-card p:first-child {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.review-card p:nth-child(2) {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.review-card strong {
+    display: block;
+    text-align: right;
+    font-weight: 600;
+}
+
+
+
+.review-rose::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:var(--rose);
+    border-radius:30px;
+    top:10px;
+    right:10px;
+    z-index:-1;
+}
+
+
+.review-bleu::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:var(--bleu);
+    border-radius:30px;
+    top:10px;
+    right:10px;
+    z-index:-1;
+}
+
+/* Hover (optionnel) */
+.review-card:hover {
+    /* transform: translateY(-6px) rotate(1deg); */
+    /* box-shadow: 0 25px 50px rgba(0,0,0,0.08); */
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .reviews-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .review-card {
+        margin-top: 0 !important;
+    }
+}
+
+/* Conteneur des étoiles */
+.stars {
+    display: flex;
+    gap: 5px; /* espace entre les étoiles */
+    margin-bottom: 1.5rem;
+    justify-content: center; /* centrer les étoiles */
+}
+
+.stars img {
+    width: 20px;  /* taille des étoiles */
+    height: 20px;
+    object-fit: contain;
 }
 
 /* =====================================================
    EVENTS
 ===================================================== */
+
+
+
+
+
+
+.event-hero{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:center;
+    gap:80px;
+
+    padding:120px 40px;
+}
+
+.event-right h1{
+    font-family:'TanSongBird';
+    font-size:2rem;
+    color:var(--jaune);
+    margin-bottom:40px;
+    text-transform: uppercase;
+}
+
+.event-right p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:20px;
+    max-width:500px;
+}
+
+.event-right a{
+    text-decoration: none;
+    margin: 10px;
+
+}
+
+
+.event-left img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+}
+
+@media (max-width:900px){
+
+.event-hero{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.event-right p{
+    margin:auto;
+}
+
+}
+
+
+.event-left{
+    position:relative;
+}
+
+.event-left::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:var(--jaune);
+    border-radius:20px;
+    top:10px;
+    right:15px;
+    z-index:-1;
+}
+
+
+
+
+
+
 
 .events-intro {
     margin: 80px 10%;
@@ -709,7 +963,7 @@ h2 {
 
 .program-image {
     width: 100%;
-    max-width: 800px;
+    max-width: 600px;
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s;
@@ -911,7 +1165,7 @@ h2 {
 ===================================================== */
 
 .footer {
-    background: var(--jaune);
+    background: transparent;
     color: var(--bleu-marine);
     padding: 4rem 10%;
     border-radius: 50px;
