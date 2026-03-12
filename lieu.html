@@ -10,7 +10,8 @@
 <meta property="og:title" content="Le Plateau – Café culturel à Bègles">
 <meta property="og:description" content="Jeux de société et évennements conviviaux au cœur de Bègles.">
 <meta property="og:type" content="website">
-
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="screen" />
 <script>
@@ -35,6 +36,7 @@ lightbox.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
 </script>
 </head>
 
@@ -97,7 +99,7 @@ lightbox.addEventListener('click', (e) => {
 <div class="section-divider"></div>
 
 <!-- BOIRE & MANGER -->
-<section class="lieu-food fade-up">
+<!-- <section class="lieu-food fade-up">
 
     <h2 class="section-title">Boire & manger</h2>
 
@@ -131,6 +133,36 @@ lightbox.addEventListener('click', (e) => {
 
     </div>
 
+</section> -->
+
+<section class="event-hero">
+
+
+    <div class="event-left">
+
+        <video controls width="100%">
+            <source src="video/presentation.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+    </div>
+
+
+    <div class="event-right">
+        <h1>Comment tout a démarrer</h1>
+
+        <p>
+           Apres lhfenfkxdfjbvxlkc,v, bastien et fanny, hjksdbflq
+           6 mois de soirées jeux à la ZAP, 
+           fianlement on trouve à local, 
+           sksfzea
+           super ville et ajd bien decidé a s'encrer dans la vie locale 
+        </p>
+
+    </div>
+
+
+
 </section>
 
 <section class="section-divider"></section>
@@ -139,16 +171,39 @@ lightbox.addEventListener('click', (e) => {
 
     <h2 class="section-title">L’ambiance</h2>
 
-    <div class="gallery-mosaic">
+    <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
 
-        <img src="assets/images/photo1.jpg" alt="" class="big">
-        <img src="assets/images/photo2.jpg" alt="">
-        <img src="assets/images/photo3.jpg" alt="">
-        <img src="assets/images/photo4.jpg" alt="" class="tall">
-        <img src="assets/images/photo1.jpg" alt="">
-        <img src="assets/images/photo2.jpg" alt="">
-
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/1.jpg">
     </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/2.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/3.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/4.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/IMG_7948.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/IMG_7955.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/IMG_7963.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/IMG_7950.jpg">
+    </div>
+    <div class="swiper-slide">
+        <img src="./assets/images/photos/jpg/IMG_7975.jpg">
+    </div>
+
+  </div>
+</div>
 
 </section>
 
@@ -205,11 +260,11 @@ lightbox.addEventListener('click', (e) => {
             <!-- <h3>Horaires</h3> -->
             <p>
                 <strong>Lundi</strong> : fermé<br>
-                <strong>Mardi</strong> : 16h – 21h30<br>
-                <strong>Mercredi</strong> : 16h – 23h<br>
-                <strong>Jeudi</strong> : 16h – 22h<br>
-                <strong>Vendredi</strong> : 16h – 22h<br>
-                <strong>Samedi</strong> : 9h30 – 12h / 17h – 22h<br>
+                <strong>Mardi</strong> : fermé<br>
+                <strong>Mercredi</strong> : 15h – 23h<br>
+                <strong>Jeudi</strong> : 16h – 23h<br>
+                <strong>Vendredi</strong> : 16h – 23h<br>
+                <strong>Samedi</strong> : 10h – 13h / 17h – 22h<br>
                 <strong>Dimanche</strong> : 14h – 19h
             </p>
         </div>
@@ -249,6 +304,30 @@ topBtn.addEventListener("click", () => {
 });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+</script>
+
 </div>
 </body>
 </html>
