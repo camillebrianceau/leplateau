@@ -203,6 +203,12 @@ lightbox.addEventListener('click', (e) => {
     </div>
 
   </div>
+  <!-- Flèches -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Points -->
+  <div class="swiper-pagination"></div>
 </div>
 
 </section>
@@ -307,24 +313,24 @@ topBtn.addEventListener("click", () => {
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
 const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
+  slidesPerView: "auto",
+  spaceBetween: 20,
   loop: true,
+
   autoplay: {
-    delay: 2500,
+    delay: 3000,
     disableOnInteraction: false,
   },
-  breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    768: {
-      slidesPerView: 2
-    },
-    1024: {
-      slidesPerView: 3
-    }
-  }
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 });
 </script>
 

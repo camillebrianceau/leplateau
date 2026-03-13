@@ -14,29 +14,6 @@
 <link rel="icon" type="image/png" href="assets/images/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/main.css" type="text/css" media="screen" />
-<script>
-const programImg = document.querySelector('.program-image');
-const programLightbox = document.getElementById('programLightbox');
-const programLightboxImg = programLightbox.querySelector('.lightbox-img');
-const closeProgram = programLightbox.querySelector('.close');
-
-if(programImg){
-    programImg.addEventListener('click', () => {
-        programLightbox.style.display = 'flex';
-        programLightboxImg.src = programImg.src;
-    });
-}
-
-closeProgram.addEventListener('click', () => {
-    programLightbox.style.display = 'none';
-});
-
-programLightbox.addEventListener('click', (e) => {
-    if(e.target !== programLightboxImg){
-        programLightbox.style.display = 'none';
-    }
-});
-</script>
 </head>
 
 <body>
@@ -100,7 +77,16 @@ programLightbox.addEventListener('click', (e) => {
 
 
     <div class="event-left">
-        <img src="./assets/images/programmes/programme-03-2026.jpg" alt="Le Plateau café ludique">
+        <div class="programme-stack">
+
+        <img src="./assets/images/programmes/programme-03-2026.jpg" alt="Programme mars 2026" class="programme top">
+
+        <img src="./assets/images/programmes/programme-02-2026.jpg" alt="Programme février 2026" class="programme middle">
+
+        <img src="./assets/images/programmes/programme-01-2026.jpg" alt="Programme janvier 2026" class="programme bottom">
+
+        </div>
+
     </div>
 
 
@@ -294,8 +280,75 @@ window.addEventListener("scroll", () => {
 topBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
+document.addEventListener("DOMContentLoaded", function(){
 
+const programmes = document.querySelectorAll('.programme');
+const lightbox = document.getElementById('programme-lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close-lightbox');
+const next = document.querySelector('.arrow.right');
+const prev = document.querySelector('.arrow.left');
+
+let index = 0;
+
+/* ouvrir */
+programmes.forEach((img,i)=>{
+    img.addEventListener("click",()=>{
+        index = i;
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+    });
+});
+
+/* suivant */
+next.addEventListener("click",()=>{
+    index++;
+    if(index >= programmes.length){
+        index = 0;
+    }
+    lightboxImg.src = programmes[index].src;
+});
+
+/* précédent */
+prev.addEventListener("click",()=>{
+    index--;
+    if(index < 0){
+        index = programmes.length - 1;
+    }
+    lightboxImg.src = programmes[index].src;
+});
+
+/* fermer */
+closeBtn.addEventListener("click",()=>{
+    lightbox.style.display="none";
+});
+
+/* clic hors image */
+lightbox.addEventListener("click",(e)=>{
+    if(e.target === lightbox){
+        lightbox.style.display="none";
+    }
+});
+
+});
+
+document.addEventListener("keydown",(e)=>{
+ if(e.key === "ArrowRight") next.click();
+ if(e.key === "ArrowLeft") prev.click();
+});
 </script>
+</div>
+
+<div id="programme-lightbox">
+
+    <span class="close-lightbox">✕</span>
+
+    <span class="arrow left">❮</span>
+
+    <img class="lightbox-img">
+
+    <span class="arrow right">❯</span>
+
 </div>
 </body>
 </html>

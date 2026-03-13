@@ -89,7 +89,8 @@ h2 {
 
     padding: 20px 40px;
 
-    background: transparent;
+    background: white;
+    /* border-bottom: #f8426f 1px solid; */
 }
 
 /* .nav-right {
@@ -123,6 +124,10 @@ h2 {
 
 .navbar a:hover {
     color: var(--rose);
+    /* background: linear-gradient(
+        /* rgba(212, 179, 31, 0) 40%,
+        rgba(255, 189, 66, 0.8) 100%
+    );  */ 
     /* transition: 0.3s;
     transform: scale(1.05); */
 }
@@ -226,7 +231,7 @@ h2 {
     align-items: center;
 
     /* Image de fond */
-    background: url('../images/fond-test5.png') center/cover no-repeat;
+    background: url('../images/photos/jpg/3.jpg') center/cover no-repeat;
     /* couleur blanche avec transparence si tu veux un léger voile */
     background-blend-mode: lighten;
     opacity: 0.9; /* si tu veux réduire l'intensité de la bg */
@@ -252,7 +257,7 @@ h2 {
 }
 
 .hero-image {
-    max-width: 40%; /* ajustable */
+    max-width: 100%; /* ajustable */
     height: auto;
     display: block;
     margin: auto;
@@ -260,12 +265,15 @@ h2 {
 
 
 
-.text-intro{
-    margin-left: 15;
-    margin-right: 15;
+.text-intro {
+    max-width: 1000px; /* limite la largeur pour que le texte reste lisible */
+    margin: 0 auto;     /* centre horizontalement */
+    padding-left: 45px;
+    padding-right: 45px;
     font-size: x-large;
-    font-family:'Sailors';
+    font-family: 'Sailors';
     color: var(--bleu-marine);
+    text-align: center; /* optionnel pour centrer le texte */
 }
 /* =====================================================
    BUTTONS
@@ -643,19 +651,40 @@ h2 {
    MOSAIQUE
 ===================================================== */
 
-
+.swiper-slide {
+  width: 320px;
+}
 .swiper {
   width: 100%;
   padding: 40px 0;
 }
 
-.swiper-slide img {
-  /* width: 100%; */
+.swiper-slide {
   height: 270px;
-  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--jaune);
+}
+
+.swiper-pagination-bullet {
+    background: #ccc;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ffbd42;
+}
 .gallery-mosaic {
     column-count: 3;
     column-gap: 20px;
@@ -870,6 +899,98 @@ h2 {
 ===================================================== */
 
 
+.programme-stack:hover .top{
+    transform:translate(-10px,-10px);
+}
+
+.programme-stack{
+    position:relative;
+    width:100%;
+    max-width:420px;
+    height:auto;
+}
+/* faux programme jaune derrière */
+.programme-stack::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:var(--jaune);
+    border-radius:20px;
+    transform:translate(45px,45px);
+    z-index:0;
+}
+
+.programme{
+    width:100%;
+    border-radius:20px;
+    position:absolute;
+    top:0;
+    left:0;
+    cursor:pointer;
+    box-shadow:0 15px 30px rgba(0,0,0,0.25);
+    transition:0.3s;
+}
+
+/* programme actuel */
+.programme.top{
+    position:relative;
+    z-index:3;
+}
+
+/* anciens programmes */
+.programme.middle{
+    transform:translate(15px,15px);
+    z-index:2;
+}
+
+.programme.bottom{
+    transform:translate(30px,30px);
+    z-index:1;
+}
+
+
+#programme-lightbox{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox-img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+.close-lightbox{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+}
+
+.arrow{
+    position:absolute;
+    top:50%;
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+    user-select:none;
+}
+
+.arrow.left{
+    left:40px;
+}
+
+.arrow.right{
+    right:40px;
+}
 
 
 
@@ -929,7 +1050,7 @@ h2 {
     position:relative;
 }
 
-.event-left::after{
+/* .event-left::after{
     content:"";
     position:absolute;
     width:100%;
@@ -939,7 +1060,7 @@ h2 {
     top:10px;
     right:15px;
     z-index:-1;
-}
+} */
 
 
 
