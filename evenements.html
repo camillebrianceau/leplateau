@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Plateau | Programme et événements</title>
+    <meta
+        name="description"
+        content="Retrouvez le programme du Plateau à Bègles : affiche du mois, événements à venir et ambiance des soirées."
+    >
+    <meta name="theme-color" content="#2c3c4b">
+    <meta property="og:title" content="Le Plateau | Café culturel et ludique à Bègles">
+    <meta
+        property="og:description"
+        content="Une version du site inspirée des jeux de société, du damier du café et de l'énergie collective du Plateau."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/logo/LePlateau.png">
+    <link rel="icon" type="image/png" href="assets/images/logo/logo.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" defer></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CafeOrCoffeeShop",
+            "name": "Le Plateau",
+            "description": "Café culturel et ludique associatif à Bègles.",
+            "image": "assets/images/logo/LePlateau.png",
+            "email": "Leplateau.ccla@outlook.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Place du Bicentenaire",
+                "addressLocality": "Bègles",
+                "postalCode": "33130",
+                "addressCountry": "FR"
+            },
+            "sameAs": [
+                "https://www.instagram.com/leplateau.ccla/",
+                "https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/",
+                "https://linktr.ee/leplateau.ccla"
+            ]
+        }
+    </script>
+</head>
+<body data-page="programme">
+    <div class="board-texture" aria-hidden="true"></div>
+    <div class="checker checker-a" aria-hidden="true"></div>
+    <div class="checker checker-b" aria-hidden="true"></div>
+    <div class="checker checker-c" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+        <div class="shell">
+            <nav class="nav" aria-label="Navigation principale">
+                <a class="brand" href="index.html">
+                    <img src="assets/images/logo/logo.png" alt="Logo Le Plateau">
+                    <span class="brand-copy">
+                        <span class="brand-script">café culturel et ludique</span>
+                        <span class="brand-name">Le Plateau</span>
+                    </span>
+                </a>
+
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-menu"
+                    aria-label="Ouvrir le menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-menu" id="site-menu">
+                    <a href="lieu.html">Le lieu</a>
+                    <a href="evenements.html" aria-current="page">Le programme</a>
+                    <a href="association.html">Adhésions</a>
+                    <a href="contact.html">Contact</a>
+                    <a class="nav-social" href="https://www.instagram.com/leplateau.ccla/" target="_blank" rel="noreferrer" aria-label="Instagram Le Plateau">
+                        <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm10.2 1.6a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1ZM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Z"/></svg></span>
+                    </a>
+                    <a class="nav-social" href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/" target="_blank" rel="noreferrer" aria-label="Facebook Le Plateau">
+                        <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8a18.4 18.4 0 0 0-2.2-.1c-2.2 0-3.8 1.4-3.8 4v2.2H8v3h2.7v8Z"/></svg></span>
+                    </a>
+                    <a class="nav-social" href="mailto:Leplateau.ccla@outlook.com" aria-label="Envoyer un mail au Plateau">
+                        <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M4 6.75A1.75 1.75 0 0 1 5.75 5h12.5A1.75 1.75 0 0 1 20 6.75v10.5A1.75 1.75 0 0 1 18.25 19H5.75A1.75 1.75 0 0 1 4 17.25Zm1.5.56v.18l6.03 4.58a.8.8 0 0 0 .94 0l6.03-4.58v-.18a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25Zm13 1.98-5.12 3.89a2.3 2.3 0 0 1-2.76 0L5.5 9.29v7.96c0 .14.11.25.25.25h12.5a.25.25 0 0 0 .25-.25Z"/></svg></span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="path-pawn-anchor" aria-hidden="true">
+        <span class="path-pawn">
+            <span class="path-pawn-head"></span>
+            <span class="path-pawn-body"></span>
+            <span class="path-pawn-base"></span>
+        </span>
+    </div>
+
+    <main>
+        <section class="page-intro page-intro-program" id="programme">
+            <div class="shell page-intro-shell page-intro-shell-program">
+                <div class="page-intro-copy" data-reveal>
+                    <p class="section-chip">Programme du mois</p>
+                    <h1 class="page-title">Le programme</h1>
+                    <p class="page-lead">
+                        L'affiche du moment en premier, puis plus bas les formats qui reviennent et le lieu quand les soirées prennent vie.
+                    </p>
+
+                    <div class="event-tags">
+                        <span>Soirées jeux</span>
+                        <span>Quiz</span>
+                        <span>Cartes</span>
+                        <span>Impro</span>
+                        <span>Stand-up</span>
+                    </div>
+
+                    <div class="page-actions">
+                        <a class="button button-primary" href="https://linktr.ee/leplateau.ccla/" target="_blank" rel="noreferrer">
+                            S'inscrire aux événements
+                        </a>
+                        <a class="button button-secondary" href="https://www.instagram.com/leplateau.ccla/" target="_blank" rel="noreferrer">
+                            Suivre Instagram
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="program-hero-visual" data-reveal data-reveal-delay="0.08s">
+                    <button
+                        class="card-main zoom-item"
+                        type="button"
+                        data-zoom-src="assets/images/programmes/programme-04-2026.jpg"
+                        data-zoom-alt="Affiche du programme d'avril 2026 du Plateau"
+                        aria-label="Agrandir le programme principal"
+                    >
+                        <img src="assets/images/programmes/programme-04-2026.jpg" alt="Programme d'avril 2026 du Plateau">
+                    </button>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section section-soft program-feature">
+
+            <div class="shell event-kinds" data-reveal data-reveal-delay="0.08s">
+                <div class="section-head compact section-head-wide">
+                    <p class="section-chip">Les soirées</p>
+                    <h2>Des soirées qui changent de ton</h2>
+                    <p>
+                        Certaines sont très jeu, d'autres plus scène, plus cartes ou plus festives, mais toutes gardent le même esprit d'accueil.
+                    </p>
+                </div>
+
+                <div class="event-kinds-grid">
+                    <article class="event-kind">
+                        <p class="card-label">Jeux</p>
+                        <h3>Des tables ouvertes</h3>
+                        <p>Des tables ouvertes, des découvertes, des parties qui s'étirent et une équipe qui conseille.</p>
+                    </article>
+
+                    <article class="event-kind">
+                        <p class="card-label">Cartes</p>
+                        <h3>Belote, tarot, habitudes</h3>
+                        <p>Des formats qui donnent leurs habitudes au lieu et font revenir les mêmes personnes au fil du mois.</p>
+                    </article>
+
+                    <article class="event-kind">
+                        <p class="card-label">Scène</p>
+                        <h3>Quiz, impro, stand-up</h3>
+                        <p>Des soirées plus pleines, plus sonores, avec une énergie différente mais toujours très conviviale.</p>
+                    </article>
+
+                    <article class="event-kind">
+                        <p class="card-label">Rendez-vous</p>
+                        <h3>Des formats qui reviennent</h3>
+                        <p>Le programme garde aussi des repères: des soirs où l'on sait déjà un peu l'ambiance que l'on va retrouver.</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="shell memory-carousel stack-divider" data-reveal>
+                <div class="section-head compact section-head-wide">
+                    <p class="section-chip">Galerie</p>
+                    <h2>Le Plateau quand les soirées prennent vie</h2>
+                    <p>
+                        Quelques images pour voir comment l'affiche se transforme ensuite en tables pleines, comptoir en mouvement et moments partagés.
+                    </p>
+                </div>
+
+                <div class="carousel-shell">
+                    <button class="carousel-arrow carousel-prev" type="button" aria-label="Photo précédente">‹</button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/photo-event.jpeg" data-zoom-alt="Une soirée scène au Plateau">
+                                <img src="assets/images/photos/photo-event.jpeg" alt="Une soirée scène au Plateau" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/quiz-presentation.JPG" data-zoom-alt="Présentation pendant une soirée quiz au Plateau">
+                                <img src="assets/images/photos/quiz-presentation.JPG" alt="Présentation pendant une soirée quiz au Plateau" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/wintercup-winners.JPG" data-zoom-alt="Gagnantes et gagnants d'une soirée au Plateau">
+                                <img src="assets/images/photos/wintercup-winners.JPG" alt="Gagnantes et gagnants d'une soirée au Plateau" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/wintercup-points.JPG" data-zoom-alt="Soirée jeu avec tableau des scores au Plateau">
+                                <img src="assets/images/photos/wintercup-points.JPG" alt="Soirée jeu avec tableau des scores au Plateau" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/IMG_8021.JPG" data-zoom-alt="Table partagée pendant une soirée au Plateau">
+                                <img src="assets/images/photos/IMG_8021.JPG" alt="Table partagée pendant une soirée au Plateau" loading="lazy">
+                            </button>
+                        </div>
+                    </div>
+                    <button class="carousel-arrow carousel-next" type="button" aria-label="Photo suivante">›</button>
+                </div>
+                <div class="carousel-dots" aria-label="Navigation de la galerie"></div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <div class="zoom-modal" id="zoom-modal" hidden aria-hidden="true">
+        <button class="zoom-close" type="button" aria-label="Fermer l'image">×</button>
+        <div class="zoom-frame">
+            <button class="zoom-arrow" id="zoom-prev" type="button" aria-label="Image précédente">❮</button>
+            <figure class="zoom-figure">
+                <img class="zoom-image" src="assets/images/programmes/programme-04-2026.jpg" alt="">
+                <figcaption class="zoom-caption"></figcaption>
+            </figure>
+            <button class="zoom-arrow" id="zoom-next" type="button" aria-label="Image suivante">❯</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <div class="footer-main">
+                <img class="footer-logo" src="assets/images/logo/logo.png" alt="Logo Le Plateau">
+                <p class="brand-script footer-script">café culturel ludique et associatif</p>
+                <p class="footer-title">LE PLATEAU</p>
+                <p class="footer-text">
+                    Un lieu pour jouer, sortir, partager et faire exister une vraie vie de quartier à Bègles.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="lieu.html#plateau">Le lieu</a>
+                <a href="evenements.html#programme">Le programme</a>
+                <a href="association.html#adhesions">Adhésions</a>
+                <a href="contact.html#venir">Contact</a>
+            </div>
+
+            <div class="footer-meta">
+                <a class="footer-address" href="https://maps.google.com/?q=Place+du+Bicentenaire+33130+B%C3%A8gles" target="_blank" rel="noreferrer">
+                    place du Bicentenaire,<br>33130 Bègles
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/leplateau.ccla/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm10.2 1.6a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1ZM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/" target="_blank" rel="noreferrer" aria-label="Facebook">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8a18.4 18.4 0 0 0-2.2-.1c-2.2 0-3.8 1.4-3.8 4v2.2H8v3h2.7v8Z"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://linktr.ee/leplateau.ccla/" target="_blank" rel="noreferrer" aria-label="Linktree">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M11 2h2v20h-2zM4.9 7.3l1.4-1.4L12 11.6l5.7-5.7 1.4 1.4L13.4 13l5.7 5.7-1.4 1.4L12 14.4l-5.7 5.7-1.4-1.4L10.6 13 4.9 7.3z"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-bottom">© <span id="year">2026</span> Le Plateau · version jeu de société</p>
+    </footer>
+</body>
+</html>

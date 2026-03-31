@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Plateau | Le lieu et l'histoire</title>
+    <meta
+        name="description"
+        content="Découvrez Le Plateau à Bègles : le lieu, son ambiance, son histoire et ce qui fait vivre ce café culturel et ludique."
+    >
+    <meta name="theme-color" content="#2c3c4b">
+    <meta property="og:title" content="Le Plateau | Café culturel et ludique à Bègles">
+    <meta
+        property="og:description"
+        content="Une version du site inspirée des jeux de société, du damier du café et de l'énergie collective du Plateau."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/logo/LePlateau.png">
+    <link rel="icon" type="image/png" href="assets/images/logo/logo.png">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" defer></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CafeOrCoffeeShop",
+            "name": "Le Plateau",
+            "description": "Café culturel et ludique associatif à Bègles.",
+            "image": "assets/images/logo/LePlateau.png",
+            "email": "Leplateau.ccla@outlook.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Place du Bicentenaire",
+                "addressLocality": "Bègles",
+                "postalCode": "33130",
+                "addressCountry": "FR"
+            },
+            "sameAs": [
+                "https://www.instagram.com/leplateau.ccla/",
+                "https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/",
+                "https://linktr.ee/leplateau.ccla"
+            ]
+        }
+    </script>
+</head>
+<body data-page="lieu">
+    <div class="board-texture" aria-hidden="true"></div>
+    <div class="checker checker-a" aria-hidden="true"></div>
+    <div class="checker checker-b" aria-hidden="true"></div>
+    <div class="checker checker-c" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+        <div class="shell">
+            <nav class="nav" aria-label="Navigation principale">
+                <a class="brand" href="index.html">
+                    <img src="assets/images/logo/logo.png" alt="Logo Le Plateau">
+                    <span class="brand-copy">
+                        <span class="brand-script">café culturel et ludique</span>
+                        <span class="brand-name">Le Plateau</span>
+                    </span>
+                </a>
+
+                <button
+                    class="nav-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="site-menu"
+                    aria-label="Ouvrir le menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav-menu" id="site-menu">
+                    <a href="lieu.html" aria-current="page">Le lieu</a>
+                    <a href="evenements.html">Le programme</a>
+                    <a href="association.html">Adhésions</a>
+                    <a href="contact.html">Contact</a>
+                    <a class="nav-social" href="https://www.instagram.com/leplateau.ccla/" target="_blank" rel="noreferrer" aria-label="Instagram Le Plateau">
+                        <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm10.2 1.6a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1ZM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Z"/></svg></span>
+                    </a>
+                    <a class="nav-social" href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/" target="_blank" rel="noreferrer" aria-label="Facebook Le Plateau">
+                        <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8a18.4 18.4 0 0 0-2.2-.1c-2.2 0-3.8 1.4-3.8 4v2.2H8v3h2.7v8Z"/></svg></span>
+                    </a>
+                    <a class="nav-social" href="mailto:Leplateau.ccla@outlook.com" aria-label="Envoyer un mail au Plateau">
+                        <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M4 6.75A1.75 1.75 0 0 1 5.75 5h12.5A1.75 1.75 0 0 1 20 6.75v10.5A1.75 1.75 0 0 1 18.25 19H5.75A1.75 1.75 0 0 1 4 17.25Zm1.5.56v.18l6.03 4.58a.8.8 0 0 0 .94 0l6.03-4.58v-.18a.25.25 0 0 0-.25-.25H5.75a.25.25 0 0 0-.25.25Zm13 1.98-5.12 3.89a2.3 2.3 0 0 1-2.76 0L5.5 9.29v7.96c0 .14.11.25.25.25h12.5a.25.25 0 0 0 .25-.25Z"/></svg></span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="path-pawn-anchor" aria-hidden="true">
+        <span class="path-pawn">
+            <span class="path-pawn-head"></span>
+            <span class="path-pawn-body"></span>
+            <span class="path-pawn-base"></span>
+        </span>
+    </div>
+
+    <main>
+        <section class="page-intro" id="plateau">
+            <div class="shell page-intro-shell">
+                <div class="page-intro-copy" data-reveal>
+                    <p class="section-chip">Le lieu</p>
+                    <h1 class="page-title">Le lieu</h1>
+                    <p class="page-lead">
+                        Un café associatif où l'on vient pour jouer, découvrir des jeux, rester un moment, demander
+                        conseil et retrouver une vraie ambiance de quartier.
+                    </p>
+
+                    <div class="page-actions place-hero-actions">
+                        <a class="button button-secondary" href="evenements.html">Voir le programme</a>
+                        <a class="button button-secondary" href="contact.html">Contact et accès</a>
+                        <a class="button button-primary button-myludo" href="https://www.myludo.fr/#!/profil/bastien-grezes-84688" target="_blank" rel="noreferrer">Voir la ludothèque MyLudo</a>
+                    </div>
+                </div>
+
+                <aside class="place-hero-visual hero-board" data-reveal data-reveal-delay="0.08s">
+                    <div class="hero-board-grid" aria-hidden="true"></div>
+
+                    <button
+                        class="hero-photo hero-photo-main zoom-item"
+                        type="button"
+                        data-zoom-src="assets/images/photos/people-choosing-game.JPG"
+                        data-zoom-alt="Des visiteurs choisissent un jeu au Plateau"
+                        aria-label="Agrandir une photo de personnes qui choisissent un jeu"
+                    >
+                        <img src="assets/images/photos/people-choosing-game.JPG" alt="Des visiteurs choisissent un jeu au Plateau" loading="lazy">
+                    </button>
+
+                    <button
+                        class="hero-photo hero-photo-side zoom-item place-hero-side-a"
+                        type="button"
+                        data-zoom-src="assets/images/photos/games-library.jpg"
+                        data-zoom-alt="La ludothèque du Plateau"
+                        aria-label="Agrandir une photo de la ludothèque"
+                    >
+                        <img src="assets/images/photos/games-library.jpg" alt="La ludothèque du Plateau" loading="lazy">
+                    </button>
+
+                    <button
+                        class="hero-photo zoom-item place-hero-side-b"
+                        type="button"
+                        data-zoom-src="assets/images/photos/photo-lieu.jpeg"
+                        data-zoom-alt="Le Plateau vivant pendant une soirée"
+                        aria-label="Agrandir une photo d'ambiance du Plateau"
+                    >
+                        <img src="assets/images/photos/photo-lieu.jpeg" alt="Le Plateau vivant pendant une soirée" loading="lazy">
+                    </button>
+
+                </aside>
+            </div>
+        </section>
+
+        <section class="section" id="histoire">
+            <div class="shell">
+                <div class="section-head" data-reveal>
+                    <p class="section-chip">Repères</p>
+                    <h2>Le projet, étape par étape</h2>
+                    <p>
+                        Avant d'être un lieu vivant, Le Plateau a commencé par une idée, des essais, puis une ouverture très attendue.
+                    </p>
+                </div>
+
+                <div class="history-zigzag" data-reveal data-reveal-delay="0.12s">
+                    <div class="history-line" aria-hidden="true"></div>
+
+                    <article class="timeline-step history-step history-left step-yellow has-photo-pair">
+                        <span class="step-number">1</span>
+                        <p class="step-date">Nov. 2024 → mars 2025</p>
+                        <h3>Lancer l'idée</h3>
+                        <p>L'association se structure et le futur café prend forme.</p>
+                        <div class="history-photo-cluster">
+                            <button class="history-photo history-photo-slot-a zoom-item" type="button" data-zoom-src="assets/images/photos/fondateurs.JPG" data-zoom-alt="Photo d'un moment au bar du Plateau">
+                                <img src="assets/images/photos/fondateurs.JPG" alt="Moment au bar du Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-b zoom-item" type="button" data-zoom-src="assets/images/photos/bar-in-action.JPG" data-zoom-alt="Le comptoir du Plateau pendant une soirée">
+                                <img src="assets/images/photos/bar-in-action.JPG" alt="Le comptoir du Plateau pendant une soirée" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-c zoom-item" type="button" data-zoom-src="assets/images/photos/fondateurs.JPG" data-zoom-alt="Photo d'un moment au bar du Plateau">
+                                <img src="assets/images/photos/fondateurs.JPG" alt="Moment au bar du Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-d zoom-item" type="button" data-zoom-src="assets/images/photos/bar-in-action.JPG" data-zoom-alt="Le comptoir du Plateau pendant une soirée">
+                                <img src="assets/images/photos/bar-in-action.JPG" alt="Le comptoir du Plateau pendant une soirée" loading="lazy">
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="timeline-step history-step history-right step-red history-drop has-photo-pair">
+                        <span class="step-number">2</span>
+                        <p class="step-date">Avril → sept. 2025</p>
+                        <h3>Tester le concept</h3>
+                        <p>Les soirées ZAP confirment l'envie du public et créent un premier noyau.</p>
+                        <div class="history-photo-cluster">
+                            <button class="history-photo history-photo-slot-a zoom-item" type="button" data-zoom-src="assets/images/photos/quiz-night.jpg" data-zoom-alt="Photo d'une soirée type ZAP au Plateau">
+                                <img src="assets/images/photos/quiz-night.jpg" alt="Soirée type ZAP au Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-b zoom-item" type="button" data-zoom-src="assets/images/photos/people-playing-best.JPG" data-zoom-alt="Joueuses et joueurs réunis autour d'une table au Plateau">
+                                <img src="assets/images/photos/people-playing-best.JPG" alt="Joueuses et joueurs réunis autour d'une table au Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-c zoom-item" type="button" data-zoom-src="assets/images/photos/quiz-night.jpg" data-zoom-alt="Photo d'une soirée type ZAP au Plateau">
+                                <img src="assets/images/photos/quiz-night.jpg" alt="Soirée type ZAP au Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-d zoom-item" type="button" data-zoom-src="assets/images/photos/people-playing-best.JPG" data-zoom-alt="Joueuses et joueurs réunis autour d'une table au Plateau">
+                                <img src="assets/images/photos/people-playing-best.JPG" alt="Joueuses et joueurs réunis autour d'une table au Plateau" loading="lazy">
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="timeline-step history-step history-left step-blue has-photo-pair">
+                        <span class="step-number">3</span>
+                        <p class="step-date">Rentrée 2025</p>
+                        <h3>Se faire connaître</h3>
+                        <p>Le Plateau trouve peu à peu sa place dans le paysage local.</p>
+                        <div class="history-photo-cluster">
+                            <button class="history-photo history-photo-slot-a zoom-item" type="button" data-zoom-src="assets/images/photos/outside-affiche.JPG" data-zoom-alt="Affiches visibles depuis l'extérieur du Plateau">
+                                <img src="assets/images/photos/outside-affiche.JPG" alt="Affiches visibles depuis l'extérieur du Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-b zoom-item" type="button" data-zoom-src="assets/images/photos/photo-devanture.jpg" data-zoom-alt="La devanture du Plateau au moment où le lieu se fait connaître">
+                                <img src="assets/images/photos/photo-devanture.jpg" alt="La devanture du Plateau au moment où le lieu se fait connaître" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-c zoom-item" type="button" data-zoom-src="assets/images/photos/outside-affiche.JPG" data-zoom-alt="Affiches visibles depuis l'extérieur du Plateau">
+                                <img src="assets/images/photos/outside-affiche.JPG" alt="Affiches visibles depuis l'extérieur du Plateau" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-d zoom-item" type="button" data-zoom-src="assets/images/photos/photo-devanture.jpg" data-zoom-alt="La devanture du Plateau au moment où le lieu se fait connaître">
+                                <img src="assets/images/photos/photo-devanture.jpg" alt="La devanture du Plateau au moment où le lieu se fait connaître" loading="lazy">
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="timeline-step history-step history-right step-white has-photo-pair">
+                        <span class="step-number">4</span>
+                        <p class="step-date">1er octobre 2025</p>
+                        <h3>Préparer le lieu</h3>
+                        <p>Le local est trouvé et les bénévoles se mobilisent pour l'ouverture.</p>
+                        <div class="history-photo-cluster">
+                            <button class="history-photo history-photo-slot-a zoom-item" type="button" data-zoom-src="assets/images/photos/photo-devanture.jpg" data-zoom-alt="La devanture du Plateau avant l'ouverture">
+                                <img src="assets/images/photos/photo-devanture.jpg" alt="La devanture du Plateau avant l'ouverture" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-b zoom-item" type="button" data-zoom-src="assets/images/photos/photo-renov.jpg" data-zoom-alt="Le Plateau en phase d'installation">
+                                <img src="assets/images/photos/photo-renov.jpg" alt="Le Plateau en phase d'installation" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-c zoom-item" type="button" data-zoom-src="assets/images/photos/photo-devanture.jpg" data-zoom-alt="La devanture du Plateau avant l'ouverture">
+                                <img src="assets/images/photos/photo-devanture.jpg" alt="La devanture du Plateau avant l'ouverture" loading="lazy">
+                            </button>
+                            <button class="history-photo history-photo-slot-d zoom-item" type="button" data-zoom-src="assets/images/photos/photo-renov.jpg" data-zoom-alt="Le Plateau en phase d'installation">
+                                <img src="assets/images/photos/photo-renov.jpg" alt="Le Plateau en phase d'installation" loading="lazy">
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="timeline-step history-step history-finale step-yellow">
+                        <span class="step-number">5</span>
+                        <p class="step-date">7 novembre 2025</p>
+                        <h3>Ouverture</h3>
+                        <p>
+                            La soirée d'ouverture marque une vraie bascule: après des mois d'idées, d'essais et de préparation,
+                            le lieu ouvre enfin ses portes. Les tables se remplissent, le comptoir tourne, les premières habitudes
+                            naissent et Le Plateau prend d'un coup une existence très concrète.
+                        </p>
+                        <div class="history-opening-photos">
+                            <button class="history-photo zoom-item" type="button" data-zoom-src="assets/images/photos/photo-lieu.jpeg" data-zoom-alt="Le Plateau rempli pendant une soirée d'ouverture">
+                                <img src="assets/images/photos/photo-lieu.jpeg" alt="Le Plateau rempli pendant une soirée d'ouverture" loading="lazy">
+                            </button>
+                            <button class="history-photo zoom-item" type="button" data-zoom-src="assets/images/photos/bar-in-action.JPG" data-zoom-alt="Le comptoir du Plateau pendant l'ouverture">
+                                <img src="assets/images/photos/bar-in-action.JPG" alt="Le comptoir du Plateau pendant l'ouverture" loading="lazy">
+                            </button>
+                            <button class="history-photo zoom-item" type="button" data-zoom-src="assets/images/photos/photo-event.jpeg" data-zoom-alt="Une animation pendant les premières soirées du Plateau">
+                                <img src="assets/images/photos/photo-event.jpeg" alt="Une animation pendant les premières soirées du Plateau" loading="lazy">
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <article class="history-after-note editorial-note history-after-combined stack-divider" data-reveal data-reveal-delay="0.16s">
+                    <div class="history-after-top">
+                        <div class="history-after-intro">
+                            <!-- <p class="section-chip">Depuis l'ouverture</p> -->
+                            <h3 class="history-after-title">Depuis l'ouverture ...</h3>
+                            <p class="history-after-lead">
+                                Des tables qui se remplissent, des habitudes qui reviennent et des soirées qui donnent envie de rester un peu plus longtemps.
+                            </p>
+                        </div>
+                        <p class="history-after-thanks">
+                            <span class="history-hearts" aria-hidden="true">&#9829; &#9829; &#9829;</span>
+                            Merci aux bénévoles, aux curieuses et curieux du début, aux habitué·es d'aujourd'hui et à toutes les personnes
+                            qui font circuler l'adresse autour d'elles.
+                        </p>
+                    </div>
+
+                    <div class="history-after-points">
+                        <p><strong>300+ jeux</strong>Une ludothèque à explorer sur place, entre jeux d'ambiance, cartes et grands plateaux.</p>
+                        <p><strong>Des habitudes</strong>Des personnes reviennent, conseillent un jeu et donnent peu à peu une vraie vie de quartier au lieu.</p>
+                        <p><strong>Des rendez-vous</strong>Quiz, impro, stand-up, cartes et soirées jeux donnent maintenant du rythme aux semaines.</p>
+                    </div>
+
+                </article>
+
+                <div class="memory-carousel history-archive-carousel" data-reveal data-reveal-delay="0.2s">
+                    <div class="carousel-shell">
+                        <button class="carousel-arrow carousel-prev" type="button" aria-label="Archive précédente">‹</button>
+                        <div class="carousel-viewport">
+                            <div class="carousel-track">
+                                <article class="history-archive-card carousel-slide">
+                                    <h3>Archives</h3>
+                                    <p>Quelques traces de l'élan de départ, entre préparation du projet, premiers rendez-vous et ouverture du lieu.</p>
+                                </article>
+                                <button class="history-archive-photo carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/fondateurs.JPG" data-zoom-alt="Photo d'archive liée au projet du Plateau">
+                                    <img src="assets/images/photos/fondateurs.JPG" alt="Photo d'archive liée au projet du Plateau" loading="lazy">
+                                </button>
+                                <button class="history-archive-photo carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/quiz-night.jpg" data-zoom-alt="Soirée quiz dans l'histoire du Plateau">
+                                    <img src="assets/images/photos/quiz-night.jpg" alt="Soirée quiz dans l'histoire du Plateau" loading="lazy">
+                                </button>
+                                <button class="history-archive-photo carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/photo-devanture.jpg" data-zoom-alt="Devanture du Plateau pendant la phase d'ouverture">
+                                    <img src="assets/images/photos/photo-devanture.jpg" alt="Devanture du Plateau pendant la phase d'ouverture" loading="lazy">
+                                </button>
+                                <button class="history-archive-photo carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/photo-renov.jpg" data-zoom-alt="Le Plateau pendant les préparatifs">
+                                    <img src="assets/images/photos/photo-renov.jpg" alt="Le Plateau pendant les préparatifs" loading="lazy">
+                                </button>
+                                <button class="history-archive-photo carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/IMG_8021.JPG" data-zoom-alt="Photo d'archive d'un moment partagé au Plateau">
+                                    <img src="assets/images/photos/IMG_8021.JPG" alt="Photo d'archive d'un moment partagé au Plateau" loading="lazy">
+                                </button>
+                                <button class="history-archive-photo carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/wintercup-winners.JPG" data-zoom-alt="Photo d'archive d'un événement au Plateau">
+                                    <img src="assets/images/photos/wintercup-winners.JPG" alt="Photo d'archive d'un événement au Plateau" loading="lazy">
+                                </button>
+                            </div>
+                        </div>
+                        <button class="carousel-arrow carousel-next" type="button" aria-label="Archive suivante">›</button>
+                    </div>
+                    <div class="carousel-dots" aria-label="Navigation des archives"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="zoom-modal" id="zoom-modal" hidden aria-hidden="true">
+        <button class="zoom-close" type="button" aria-label="Fermer l'image">×</button>
+        <div class="zoom-frame">
+            <button class="zoom-arrow" id="zoom-prev" type="button" aria-label="Image précédente">❮</button>
+            <figure class="zoom-figure">
+                <img class="zoom-image" src="assets/images/programmes/programme-04-2026.jpg" alt="">
+                <figcaption class="zoom-caption"></figcaption>
+            </figure>
+            <button class="zoom-arrow" id="zoom-next" type="button" aria-label="Image suivante">❯</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="shell footer-inner">
+            <div class="footer-main">
+                <img class="footer-logo" src="assets/images/logo/logo.png" alt="Logo Le Plateau">
+                <p class="brand-script footer-script">café culturel ludique et associatif</p>
+                <p class="footer-title">LE PLATEAU</p>
+                <p class="footer-text">
+                    Un lieu pour jouer, sortir, partager et faire exister une vraie vie de quartier à Bègles.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="lieu.html#plateau">Le lieu</a>
+                <a href="evenements.html#programme">Le programme</a>
+                <a href="association.html#adhesions">Adhésions</a>
+                <a href="contact.html#venir">Contact</a>
+            </div>
+
+            <div class="footer-meta">
+                <a class="footer-address" href="https://maps.google.com/?q=Place+du+Bicentenaire+33130+B%C3%A8gles" target="_blank" rel="noreferrer">
+                    place du Bicentenaire,<br>33130 Bègles
+                </a>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/leplateau.ccla/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2Zm10.2 1.6a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1ZM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Z"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/" target="_blank" rel="noreferrer" aria-label="Facebook">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6h1.5V4.8a18.4 18.4 0 0 0-2.2-.1c-2.2 0-3.8 1.4-3.8 4v2.2H8v3h2.7v8Z"/></svg>
+                        </span>
+                    </a>
+                    <a href="https://linktr.ee/leplateau.ccla/" target="_blank" rel="noreferrer" aria-label="Linktree">
+                        <span class="social-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M11 2h2v20h-2zM4.9 7.3l1.4-1.4L12 11.6l5.7-5.7 1.4 1.4L13.4 13l5.7 5.7-1.4 1.4L12 14.4l-5.7 5.7-1.4-1.4L10.6 13 4.9 7.3z"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <p class="footer-bottom">© <span id="year">2026</span> Le Plateau · version jeu de société</p>
+    </footer>
+</body>
+</html>

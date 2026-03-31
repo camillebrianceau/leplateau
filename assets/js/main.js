@@ -4,7 +4,6 @@ const navMenu = document.querySelector(".nav-menu");
 const navToggle = document.querySelector(".nav-toggle");
 const revealItems = document.querySelectorAll("[data-reveal]");
 const year = document.querySelector("#year");
-const pathTrack = document.querySelector(".path-track");
 const pathPawnAnchor = document.querySelector(".path-pawn-anchor");
 const pathStops = Array.from(document.querySelectorAll(".path-stop"));
 
@@ -79,11 +78,20 @@ if (revealItems.length && "IntersectionObserver" in window) {
     revealItems.forEach((item) => observer.observe(item));
 }
 
-if (pathTrack && pathPawnAnchor && pathStops.length) {
+if (pathPawnAnchor) {
     const pathSections = pathStops.map((stop) => {
         const target = stop.getAttribute("href");
-        return target ? document.querySelector(target) : null;
+        if (!target || !target.startsWith("#")) {
+            return null;
+        }
+
+        try {
+            return document.querySelector(target);
+        } catch (error) {
+            return null;
+        }
     });
+    const hasSectionTargets = pathSections.some(Boolean);
 
     let currentPathIndex = -1;
     let pathFrame = 0;
@@ -110,19 +118,17 @@ if (pathTrack && pathPawnAnchor && pathStops.length) {
 
     const getPathState = () => {
         const marker = window.scrollY + (window.innerHeight * 0.42);
-        const lastIndex = pathSections.length - 1;
         const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-        let activeIndex = 0;
-        let progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+        const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+        let activeIndex = Math.min(4, Math.floor(progress * 5));
 
-        pathSections.forEach((section, index) => {
-            if (section && section.offsetTop <= marker) {
-                activeIndex = index;
-            }
-        });
-
-        if (lastIndex <= 0) {
-            return { activeIndex, progress };
+        if (hasSectionTargets) {
+            activeIndex = 0;
+            pathSections.forEach((section, index) => {
+                if (section && section.offsetTop <= marker) {
+                    activeIndex = index;
+                }
+            });
         }
 
         return { activeIndex, progress };
@@ -156,7 +162,10 @@ if (pathTrack && pathPawnAnchor && pathStops.length) {
         }
 
         targetProgress = progress;
-        setActiveStop(activeIndex);
+
+        if (pathStops.length) {
+            setActiveStop(activeIndex);
+        }
 
         if (currentPathIndex !== -1 && activeIndex !== currentPathIndex) {
             triggerJump();
@@ -185,20 +194,26 @@ const carousels = Array.from(document.querySelectorAll(".memory-carousel"));
 carousels.forEach((carousel) => {
     const track = carousel.querySelector(".carousel-track");
     const viewport = carousel.querySelector(".carousel-viewport");
-    const slides = Array.from(carousel.querySelectorAll(".carousel-slide"));
     const prev = carousel.querySelector(".carousel-prev");
     const next = carousel.querySelector(".carousel-next");
     const dotsRoot = carousel.querySelector(".carousel-dots");
 
-    if (!track || !viewport || !slides.length || !dotsRoot) return;
+    if (!track || !viewport || !dotsRoot) return;
+
+    const originalSlides = Array.from(track.children);
+
+    if (!originalSlides.length) return;
 
     let currentIndex = 0;
-    let maxIndex = 0;
+    let logicalIndex = 0;
+    let visibleSlides = 1;
     let autoAdvanceTimer = 0;
     let dots = [];
+    let cloneSpan = 0;
+    let isSyncing = false;
 
     const getMetrics = () => {
-        const firstSlide = slides[0];
+        const firstSlide = track.querySelector(".carousel-slide");
         if (!firstSlide) {
             return { visibleSlides: 1 };
         }
@@ -214,20 +229,21 @@ carousels.forEach((carousel) => {
         dotsRoot.innerHTML = "";
         dots = [];
 
-        for (let index = 0; index <= maxIndex; index += 1) {
+        for (let index = 0; index < originalSlides.length; index += 1) {
             const dot = document.createElement("button");
             dot.type = "button";
             dot.className = "carousel-dot";
-            dot.setAttribute("aria-label", `Aller au groupe de photos ${index + 1}`);
+            dot.setAttribute("aria-label", `Aller à l'élément ${index + 1}`);
             dot.addEventListener("click", () => {
-                renderSlide(index);
+                logicalIndex = index;
+                renderSlide(cloneSpan + logicalIndex);
                 restartAutoplay();
             });
             dotsRoot.appendChild(dot);
             dots.push(dot);
         }
 
-        dotsRoot.hidden = maxIndex === 0;
+        dotsRoot.hidden = originalSlides.length <= 1;
     };
 
     const stopAutoplay = () => {
@@ -237,7 +253,7 @@ carousels.forEach((carousel) => {
     };
 
     const startAutoplay = () => {
-        if (prefersReducedMotion.matches || slides.length < 2) return;
+        if (prefersReducedMotion.matches || originalSlides.length < 2) return;
         stopAutoplay();
         autoAdvanceTimer = window.setInterval(() => {
             renderSlide(currentIndex + 1);
@@ -249,32 +265,81 @@ carousels.forEach((carousel) => {
         startAutoplay();
     };
 
-    function renderSlide(index) {
-        if (!slides.length) return;
-
-        currentIndex = maxIndex > 0
-            ? ((index % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1)
-            : 0;
-
-        const offset = slides[currentIndex]?.offsetLeft || 0;
-        track.style.transform = `translateX(-${offset}px)`;
-
+    const updateDots = () => {
         dots.forEach((dot, dotIndex) => {
-            const isActive = dotIndex === currentIndex;
+            const isActive = dotIndex === logicalIndex;
             dot.classList.toggle("is-active", isActive);
             dot.setAttribute("aria-current", isActive ? "true" : "false");
         });
+    };
+
+    const buildLoop = () => {
+        track.innerHTML = "";
+
+        if (originalSlides.length <= visibleSlides) {
+            originalSlides.forEach((slide) => track.appendChild(slide.cloneNode(true)));
+            cloneSpan = 0;
+            currentIndex = 0;
+            logicalIndex = 0;
+            return;
+        }
+
+        cloneSpan = visibleSlides;
+        const headClones = originalSlides.slice(-cloneSpan).map((slide) => {
+            const clone = slide.cloneNode(true);
+            clone.dataset.carouselClone = "true";
+            return clone;
+        });
+        const tailClones = originalSlides.slice(0, cloneSpan).map((slide) => {
+            const clone = slide.cloneNode(true);
+            clone.dataset.carouselClone = "true";
+            return clone;
+        });
+
+        [...headClones, ...originalSlides.map((slide) => slide.cloneNode(true)), ...tailClones].forEach((slide) => {
+            track.appendChild(slide);
+        });
+
+        currentIndex = cloneSpan + logicalIndex;
+    };
+
+    function renderSlide(index, instant = false) {
+        const renderedSlides = Array.from(track.children);
+        if (!renderedSlides.length) return;
+
+        currentIndex = index;
+        logicalIndex = originalSlides.length
+            ? ((currentIndex - cloneSpan) % originalSlides.length + originalSlides.length) % originalSlides.length
+            : 0;
+
+        if (instant) {
+            track.style.transition = "none";
+        } else {
+            track.style.transition = "";
+        }
+
+        const offset = renderedSlides[currentIndex]?.offsetLeft || 0;
+        track.style.transform = `translateX(-${offset}px)`;
+        updateDots();
+
+        if (instant) {
+            void track.offsetWidth;
+            track.style.transition = "";
+        }
     }
 
     const syncCarousel = () => {
-        const { visibleSlides } = getMetrics();
-        maxIndex = Math.max(slides.length - visibleSlides, 0);
+        if (isSyncing) return;
+        isSyncing = true;
+        visibleSlides = getMetrics().visibleSlides;
+        buildLoop();
 
-        if (dots.length !== maxIndex + 1) {
+        if (dots.length !== originalSlides.length) {
             rebuildDots();
         }
 
-        renderSlide(Math.min(currentIndex, maxIndex));
+        renderSlide(currentIndex, true);
+        isSyncing = false;
     };
 
     prev?.addEventListener("click", () => {
@@ -285,6 +350,19 @@ carousels.forEach((carousel) => {
     next?.addEventListener("click", () => {
         renderSlide(currentIndex + 1);
         restartAutoplay();
+    });
+
+    track.addEventListener("transitionend", () => {
+        if (cloneSpan === 0 || originalSlides.length <= visibleSlides) return;
+
+        if (currentIndex >= originalSlides.length + cloneSpan) {
+            renderSlide(cloneSpan, true);
+            return;
+        }
+
+        if (currentIndex < cloneSpan) {
+            renderSlide(originalSlides.length + cloneSpan - 1, true);
+        }
     });
 
     carousel.addEventListener("mouseenter", stopAutoplay);
@@ -311,7 +389,7 @@ carousels.forEach((carousel) => {
         prefersReducedMotion.addListener(handleMotionPreference);
     }
 
-    if (slides.length < 2) {
+    if (originalSlides.length < 2) {
         prev?.setAttribute("hidden", "");
         next?.setAttribute("hidden", "");
         dotsRoot.setAttribute("hidden", "");
@@ -322,11 +400,14 @@ carousels.forEach((carousel) => {
     window.addEventListener("resize", syncCarousel);
 });
 
-if (modal && modalImage && zoomItems.length) {
+if (modal && modalImage) {
     let currentIndex = 0;
+    const getZoomItems = () => Array.from(document.querySelectorAll(".zoom-item")).filter((item) => !item.hidden);
 
     const renderModal = () => {
-        const item = zoomItems[currentIndex];
+        const items = getZoomItems();
+        const item = items[currentIndex];
+        if (!item) return;
         const src = item.dataset.zoomSrc || "";
         const alt = item.dataset.zoomAlt || item.querySelector("img")?.alt || "";
 
@@ -339,6 +420,8 @@ if (modal && modalImage && zoomItems.length) {
     };
 
     const openModal = (index) => {
+        const items = getZoomItems();
+        if (!items.length) return;
         currentIndex = index;
         renderModal();
         modal.hidden = false;
@@ -353,20 +436,31 @@ if (modal && modalImage && zoomItems.length) {
     };
 
     const moveModal = (direction) => {
-        currentIndex = (currentIndex + direction + zoomItems.length) % zoomItems.length;
+        const items = getZoomItems();
+        if (!items.length) return;
+        currentIndex = (currentIndex + direction + items.length) % items.length;
         renderModal();
     };
 
-    zoomItems.forEach((item, index) => {
-        item.addEventListener("click", () => openModal(index));
+    document.addEventListener("click", (event) => {
+        const item = event.target.closest(".zoom-item");
+        if (!item) return;
+        const items = getZoomItems();
+        const index = items.indexOf(item);
+        if (index !== -1) {
+            openModal(index);
+        }
+    });
 
-        if (item.getAttribute("role") === "button") {
-            item.addEventListener("keydown", (event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    openModal(index);
-                }
-            });
+    document.addEventListener("keydown", (event) => {
+        const item = event.target.closest(".zoom-item");
+        if (!item) return;
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        const items = getZoomItems();
+        const index = items.indexOf(item);
+        if (index !== -1) {
+            openModal(index);
         }
     });
 
