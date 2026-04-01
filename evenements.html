@@ -45,11 +45,6 @@
     </script>
 </head>
 <body data-page="programme">
-    <div class="board-texture" aria-hidden="true"></div>
-    <div class="checker checker-a" aria-hidden="true"></div>
-    <div class="checker checker-b" aria-hidden="true"></div>
-    <div class="checker checker-c" aria-hidden="true"></div>
-
     <header class="site-header" id="top">
         <div class="shell">
             <nav class="nav" aria-label="Navigation principale">
@@ -104,7 +99,6 @@
         <section class="page-intro page-intro-program" id="programme">
             <div class="shell page-intro-shell page-intro-shell-program">
                 <div class="page-intro-copy" data-reveal>
-                    <p class="section-chip">Programme du mois</p>
                     <h1 class="page-title">Le programme</h1>
                     <p class="page-lead">
                         L'affiche du moment en premier, puis plus bas les formats qui reviennent et le lieu quand les soirées prennent vie.
@@ -143,51 +137,35 @@
         </section>
 
         <section class="section section-soft program-feature">
-
-            <div class="shell event-kinds" data-reveal data-reveal-delay="0.08s">
-                <div class="section-head compact section-head-wide">
-                    <p class="section-chip">Les soirées</p>
-                    <h2>Des soirées qui changent de ton</h2>
-                    <p>
-                        Certaines sont très jeu, d'autres plus scène, plus cartes ou plus festives, mais toutes gardent le même esprit d'accueil.
+            <div class="shell program-overview" data-reveal data-reveal-delay="0.08s">
+                <div class="program-overview-head">
+                    <h2 class="program-overview-title">Une programmation qui bouge</h2>
+                    <p class="program-overview-lead">
+                        Le mieux est toujours de suivre l'affiche du moment : certains rendez-vous reviennent régulièrement, d'autres non, et la programmation essaie de se renouveler pour offrir toujours plus de choses à découvrir.
                     </p>
                 </div>
 
-                <div class="event-kinds-grid">
-                    <article class="event-kind">
-                        <p class="card-label">Jeux</p>
-                        <h3>Des tables ouvertes</h3>
-                        <p>Des tables ouvertes, des découvertes, des parties qui s'étirent et une équipe qui conseille.</p>
-                    </article>
-
-                    <article class="event-kind">
-                        <p class="card-label">Cartes</p>
-                        <h3>Belote, tarot, habitudes</h3>
-                        <p>Des formats qui donnent leurs habitudes au lieu et font revenir les mêmes personnes au fil du mois.</p>
-                    </article>
-
-                    <article class="event-kind">
-                        <p class="card-label">Scène</p>
-                        <h3>Quiz, impro, stand-up</h3>
-                        <p>Des soirées plus pleines, plus sonores, avec une énergie différente mais toujours très conviviale.</p>
-                    </article>
-
-                    <article class="event-kind">
-                        <p class="card-label">Rendez-vous</p>
-                        <h3>Des formats qui reviennent</h3>
-                        <p>Le programme garde aussi des repères: des soirs où l'on sait déjà un peu l'ambiance que l'on va retrouver.</p>
-                    </article>
+                <div class="program-overview-tags" aria-label="Formats de soirées proposés">
+                    <span>Théâtre d'impro</span>
+                    <span>Théâtre</span>
+                    <span>Contes musicaux</span>
+                    <span>Concerts</span>
+                    <span>Tournois de cartes</span>
+                    <span>Jeux de rôles</span>
+                    <span>Quiz</span>
+                    <span>Stand-up</span>
                 </div>
+
+                <p class="program-overview-copy">
+                    Au Plateau, on peut passer d'une soirée scène à une soirée cartes, d'un rendez-vous plus calme à une salle pleine d'énergie, avec toujours la même envie : proposer des formats variés, accessibles et vivants.
+                </p>
+
+                <p class="program-overview-note">
+                    Et dans tous les cas, même en dehors d'un événement particulier, tout le monde peut toujours venir simplement pour jouer : quelqu'un sera toujours heureux de vous conseiller, de vous faire découvrir de nouveaux jeux, et même de jouer avec vous ;)
+                </p>
             </div>
 
-            <div class="shell memory-carousel stack-divider" data-reveal>
-                <div class="section-head compact section-head-wide">
-                    <p class="section-chip">Galerie</p>
-                    <h2>Le Plateau quand les soirées prennent vie</h2>
-                    <p>
-                        Quelques images pour voir comment l'affiche se transforme ensuite en tables pleines, comptoir en mouvement et moments partagés.
-                    </p>
-                </div>
+            <div class="shell memory-carousel program-memory-carousel" data-reveal>
 
                 <div class="carousel-shell">
                     <button class="carousel-arrow carousel-prev" type="button" aria-label="Photo précédente">‹</button>
@@ -205,8 +183,17 @@
                             <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/wintercup-points.JPG" data-zoom-alt="Soirée jeu avec tableau des scores au Plateau">
                                 <img src="assets/images/photos/wintercup-points.JPG" alt="Soirée jeu avec tableau des scores au Plateau" loading="lazy">
                             </button>
-                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/IMG_8021.JPG" data-zoom-alt="Table partagée pendant une soirée au Plateau">
-                                <img src="assets/images/photos/IMG_8021.JPG" alt="Table partagée pendant une soirée au Plateau" loading="lazy">
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/quiz-night.jpg" data-zoom-alt="Soirée quiz au Plateau">
+                                <img src="assets/images/photos/quiz-night.jpg" alt="Soirée quiz au Plateau" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/cup.JPG" data-zoom-alt="Tournoi au Plateau avec coupe">
+                                <img src="assets/images/photos/cup.JPG" alt="Tournoi au Plateau avec coupe" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/badquality-wintercupfinale.jpg" data-zoom-alt="Finale d'un tournoi au Plateau">
+                                <img src="assets/images/photos/badquality-wintercupfinale.jpg" alt="Finale d'un tournoi au Plateau" loading="lazy">
+                            </button>
+                            <button class="memory-card carousel-slide zoom-item" type="button" data-zoom-src="assets/images/photos/people-playing3.jpg" data-zoom-alt="Table partagée pendant une soirée au Plateau">
+                                <img src="assets/images/photos/people-playing3.jpg" alt="Table partagée pendant une soirée au Plateau" loading="lazy">
                             </button>
                         </div>
                     </div>
@@ -273,7 +260,7 @@
             </div>
         </div>
 
-        <p class="footer-bottom">© <span id="year">2026</span> Le Plateau · version jeu de société</p>
+        <p class="footer-bottom">© <span id="year">2026</span> Le Plateau · café culturel ludique et associatif</p>
     </footer>
 </body>
 </html>
