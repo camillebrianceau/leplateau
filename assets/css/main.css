@@ -674,28 +674,38 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     min-height: 56px;
     padding: 1rem 1.45rem;
     border-radius: 999px;
     border: 2px solid transparent;
+    overflow: hidden;
+    isolation: isolate;
     font-weight: 900;
+    line-height: 1.15;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
     transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
 }
 
 .button:hover,
 .button:focus-visible {
-    transform: translateY(-3px);
+    transform: translate3d(0, -3px, 0);
 }
 
 .button-primary {
     color: #fff;
     background: linear-gradient(135deg, var(--red), var(--yellow));
+    background-clip: border-box;
+    background-origin: border-box;
     box-shadow: 0 18px 28px rgba(248, 66, 111, 0.22);
 }
 
 .button-secondary {
     color: var(--ink);
     background: #ffffff;
+    background-clip: padding-box;
     border-color: rgba(44, 60, 75, 0.1);
     box-shadow: var(--shadow-soft);
 }
@@ -893,7 +903,9 @@ h1 {
     width: 2.4rem;
     height: calc(var(--rail-height) + 1rem);
     z-index: 24;
-    pointer-events: none;
+    pointer-events: auto;
+    touch-action: none;
+    cursor: grab;
 }
 
 .path-pawn-anchor::before {
@@ -929,6 +941,10 @@ h1 {
     animation: pawn-hop 520ms cubic-bezier(0.22, 0.9, 0.3, 1);
 }
 
+.path-pawn-anchor.is-dragging {
+    cursor: grabbing;
+}
+
 .path-pawn {
     position: absolute;
     left: 50%;
@@ -938,6 +954,11 @@ h1 {
     filter: drop-shadow(0 8px 10px rgba(44, 60, 75, 0.16));
     transform: translate(-50%, -50%);
     will-change: top, transform;
+}
+
+body.is-dragging-pawn {
+    user-select: none;
+    cursor: grabbing;
 }
 
 .path-pawn-head,

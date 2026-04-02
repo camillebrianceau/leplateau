@@ -79,6 +79,7 @@ if (revealItems.length && "IntersectionObserver" in window) {
 }
 
 if (pathPawnAnchor) {
+    const pathPawn = pathPawnAnchor.querySelector(".path-pawn");
     const pathSections = pathStops.map((stop) => {
         const target = stop.getAttribute("href");
         if (!target || !target.startsWith("#")) {
@@ -99,6 +100,8 @@ if (pathPawnAnchor) {
     let jumpTimer = 0;
     let targetProgress = 0;
     let renderedProgress = 0;
+    let activePawnPointerId = null;
+    let isDraggingPawn = false;
 
     const setActiveStop = (index) => {
         pathStops.forEach((item, itemIndex) => {
@@ -134,6 +137,21 @@ if (pathPawnAnchor) {
         return { activeIndex, progress };
     };
 
+    const getScrollableHeight = () => (
+        Math.max(document.documentElement.scrollHeight - window.innerHeight, 1)
+    );
+
+    const setScrollFromClientY = (clientY) => {
+        const railRect = pathPawnAnchor.getBoundingClientRect();
+        const railPadding = 8;
+        const railStart = railRect.top + railPadding;
+        const railLength = Math.max(railRect.height - (railPadding * 2), 1);
+        const progress = Math.min(Math.max((clientY - railStart) / railLength, 0), 1);
+        const nextScroll = progress * getScrollableHeight();
+
+        window.scrollTo(0, nextScroll);
+    };
+
     const renderPawn = () => {
         const diff = targetProgress - renderedProgress;
         renderedProgress += diff * 0.14;
@@ -167,7 +185,7 @@ if (pathPawnAnchor) {
             setActiveStop(activeIndex);
         }
 
-        if (currentPathIndex !== -1 && activeIndex !== currentPathIndex) {
+        if (!isDraggingPawn && currentPathIndex !== -1 && activeIndex !== currentPathIndex) {
             triggerJump();
         }
 
@@ -187,6 +205,54 @@ if (pathPawnAnchor) {
     window.addEventListener("scroll", requestPathSync, { passive: true });
     window.addEventListener("resize", requestPathSync);
     window.addEventListener("load", requestPathSync);
+
+    if (pathPawn && "PointerEvent" in window) {
+        const stopDraggingPawn = () => {
+            if (!isDraggingPawn) return;
+
+            isDraggingPawn = false;
+            activePawnPointerId = null;
+            body.classList.remove("is-dragging-pawn");
+            pathPawnAnchor.classList.remove("is-dragging");
+            requestPathSync();
+        };
+
+        const handlePawnPointerMove = (event) => {
+            if (!isDraggingPawn || event.pointerId !== activePawnPointerId) {
+                return;
+            }
+
+            setScrollFromClientY(event.clientY);
+        };
+
+        const handlePawnPointerEnd = (event) => {
+            if (event.pointerId !== activePawnPointerId) {
+                return;
+            }
+
+            stopDraggingPawn();
+        };
+
+        pathPawnAnchor.addEventListener("pointerdown", (event) => {
+            if (event.button !== 0 && event.pointerType !== "touch") {
+                return;
+            }
+
+            isDraggingPawn = true;
+            activePawnPointerId = event.pointerId;
+            body.classList.add("is-dragging-pawn");
+            pathPawnAnchor.classList.add("is-dragging");
+            pathPawnAnchor.classList.remove("is-jumping");
+            window.clearTimeout(jumpTimer);
+            setScrollFromClientY(event.clientY);
+            event.preventDefault();
+        });
+
+        window.addEventListener("pointermove", handlePawnPointerMove);
+        window.addEventListener("pointerup", handlePawnPointerEnd);
+        window.addEventListener("pointercancel", handlePawnPointerEnd);
+        window.addEventListener("blur", stopDraggingPawn);
+    }
 }
 
 const carousels = Array.from(document.querySelectorAll(".memory-carousel"));
