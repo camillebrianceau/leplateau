@@ -8,14 +8,27 @@
         name="description"
         content="Le Plateau à Bègles : un café culturel et ludique avec jeux, programme mensuel, vie associative et infos pratiques pour venir."
     >
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2c3c4b">
     <meta property="og:title" content="Le Plateau | Café culturel et ludique à Bègles">
     <meta
         property="og:description"
-        content="Une version du site inspirée des jeux de société, du damier du café et de l'énergie collective du Plateau."
+        content="Le Plateau à Bègles : un café culturel et ludique avec jeux, programme mensuel, vie associative et infos pratiques pour venir."
     >
+    <meta property="og:site_name" content="Le Plateau">
+    <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/images/logo/LePlateau.png">
+    <meta property="og:url" content="https://leplateau-ludique.fr/">
+    <meta property="og:image" content="https://leplateau-ludique.fr/assets/images/logo/LePlateau.png">
+    <meta property="og:image:alt" content="Logo du café culturel et ludique Le Plateau à Bègles">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Le Plateau | Café culturel et ludique à Bègles">
+    <meta
+        name="twitter:description"
+        content="Le Plateau à Bègles : un café culturel et ludique avec jeux, programme mensuel, vie associative et infos pratiques pour venir."
+    >
+    <meta name="twitter:image" content="https://leplateau-ludique.fr/assets/images/logo/LePlateau.png">
+    <link rel="canonical" href="https://leplateau-ludique.fr/">
     <link rel="icon" type="image/png" href="assets/images/logo/logo.png">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/main.js" defer></script>
@@ -23,10 +36,12 @@
         {
             "@context": "https://schema.org",
             "@type": "CafeOrCoffeeShop",
+            "@id": "https://leplateau-ludique.fr/#place",
             "name": "Le Plateau",
-            "description": "Café culturel et ludique associatif à Bègles.",
-            "image": "assets/images/logo/LePlateau.png",
-            "email": "Leplateau.ccla@outlook.com",
+            "description": "Café culturel ludique et associatif à Bègles.",
+            "url": "https://leplateau-ludique.fr/",
+            "image": "https://leplateau-ludique.fr/assets/images/logo/LePlateau.png",
+            "email": "mailto:leplateau.ccla@outlook.com",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Place du Bicentenaire",
@@ -34,6 +49,45 @@
                 "postalCode": "33130",
                 "addressCountry": "FR"
             },
+            "hasMap": "https://maps.google.com/?q=Place+du+Bicentenaire+33130+B%C3%A8gles",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "15:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Thursday",
+                    "opens": "16:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "16:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "10:00",
+                    "closes": "13:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "17:00",
+                    "closes": "22:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "14:00",
+                    "closes": "19:00"
+                }
+            ],
             "sameAs": [
                 "https://www.instagram.com/leplateau.ccla/",
                 "https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/",
@@ -172,28 +226,28 @@
                         <p class="card-label">Le lieu</p>
                         <h3>L'histoire de l'association et du lieu</h3>
                         <p>Avant d'ouvrir le café, l'association a vécu plusieurs étapes de développement.</p>
-                        <a class="index-link" href="lieu.html">Ouvrir la page</a>
+                        <a class="index-link" href="lieu.html">Découvrir le lieu et son histoire</a>
                     </article>
 
                     <article class="index-card tile-blue" data-reveal data-reveal-delay="0.05s">
                         <p class="card-label">Programme</p>
                         <h3>Retrouver des soirées tous les mois</h3>
                         <p>Des quizs, du stand-up, du théâtre d'impro, des comptes pour les petits et des jeux tous au long de l'année.</p>
-                        <a class="index-link" href="evenements.html">Ouvrir la page</a>
+                        <a class="index-link" href="evenements.html">Voir le programme du moment</a>
                     </article>
 
                     <article class="index-card tile-yellow" data-reveal data-reveal-delay="0.1s">
                         <p class="card-label">Adhésions</p>
                         <h3>Comprendre les formules</h3>
                         <p>Pourquoi une association ? Pourquoi une adhésion ? Retrouvez les réponses sur notre page dédiée.</p>
-                        <a class="index-link" href="association.html">Ouvrir la page</a>
+                        <a class="index-link" href="association.html">Comprendre les adhésions</a>
                     </article>
 
                     <article class="index-card tile-white" data-reveal data-reveal-delay="0.15s">
                         <p class="card-label">Contact</p>
                         <h3>Préparer sa venue</h3>
                         <p>Adresse, horaires, carte et liens utiles dans une page plus pratique.</p>
-                        <a class="index-link" href="contact.html">Ouvrir la page</a>
+                        <a class="index-link" href="contact.html">Préparer votre visite</a>
                     </article>
                 </div>
             </div>

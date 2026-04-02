@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leplateau-ludique.fr/sitemap.xml

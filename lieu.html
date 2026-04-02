@@ -10,14 +10,27 @@
         name="description"
         content="Découvrez Le Plateau à Bègles : le lieu, son ambiance, son histoire et ce qui fait vivre ce café culturel et ludique."
     >
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#2c3c4b">
-    <meta property="og:title" content="Le Plateau | Café culturel et ludique à Bègles">
+    <meta property="og:title" content="Le Plateau | Le lieu et l'histoire à Bègles">
     <meta
         property="og:description"
-        content="Une version du site inspirée des jeux de société, du damier du café et de l'énergie collective du Plateau."
+        content="Découvrez le lieu, son ambiance et l'histoire du Plateau, café culturel et ludique à Bègles."
     >
+    <meta property="og:site_name" content="Le Plateau">
+    <meta property="og:locale" content="fr_FR">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/images/logo/LePlateau.png">
+    <meta property="og:url" content="https://leplateau-ludique.fr/lieu.html">
+    <meta property="og:image" content="https://leplateau-ludique.fr/assets/images/logo/LePlateau.png">
+    <meta property="og:image:alt" content="Logo du café culturel et ludique Le Plateau à Bègles">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Le Plateau | Le lieu et l'histoire à Bègles">
+    <meta
+        name="twitter:description"
+        content="Découvrez le lieu, son ambiance et l'histoire du Plateau, café culturel et ludique à Bègles."
+    >
+    <meta name="twitter:image" content="https://leplateau-ludique.fr/assets/images/logo/LePlateau.png">
+    <link rel="canonical" href="https://leplateau-ludique.fr/lieu.html">
     <link rel="icon" type="image/png" href="assets/images/logo/logo.png">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/main.js" defer></script>
@@ -25,10 +38,12 @@
         {
             "@context": "https://schema.org",
             "@type": "CafeOrCoffeeShop",
+            "@id": "https://leplateau-ludique.fr/#place",
             "name": "Le Plateau",
             "description": "Café culturel et ludique associatif à Bègles.",
-            "image": "assets/images/logo/LePlateau.png",
-            "email": "Leplateau.ccla@outlook.com",
+            "url": "https://leplateau-ludique.fr/",
+            "image": "https://leplateau-ludique.fr/assets/images/logo/LePlateau.png",
+            "email": "mailto:Leplateau.ccla@outlook.com",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Place du Bicentenaire",
@@ -36,6 +51,45 @@
                 "postalCode": "33130",
                 "addressCountry": "FR"
             },
+            "hasMap": "https://maps.google.com/?q=Place+du+Bicentenaire+33130+B%C3%A8gles",
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Wednesday",
+                    "opens": "15:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Thursday",
+                    "opens": "16:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Friday",
+                    "opens": "16:00",
+                    "closes": "23:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "10:00",
+                    "closes": "13:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Saturday",
+                    "opens": "17:00",
+                    "closes": "22:00"
+                },
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": "Sunday",
+                    "opens": "14:00",
+                    "closes": "19:00"
+                }
+            ],
             "sameAs": [
                 "https://www.instagram.com/leplateau.ccla/",
                 "https://www.facebook.com/p/Le-Plateau-Caf%C3%A9-Culturel-Ludique-Associatif-61576300440653/",
